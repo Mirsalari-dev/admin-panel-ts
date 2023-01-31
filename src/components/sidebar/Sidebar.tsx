@@ -36,7 +36,7 @@ const Sidebar = () => {
                 }`}
         >
             <div className={classes.sidebar__logo}>
-            <img src={logo} alt="digikala" />
+            <img src={logo} />
           </div>
             <div className={classes.sidebar__menu}>
                 {sidebarNav.map((nav, index) => (

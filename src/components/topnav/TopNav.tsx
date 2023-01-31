@@ -5,6 +5,7 @@ import SidebarContext from '../../context/sidebarContext';
 
 import classes from "./TopNav.module.scss";
 import SearchBox from "./searchBox/SearchBox";
+import TopNavRightBox from "./rightBox/TopNavRightBox";
 
 function TopNav() {
   const sideOpenCtx = useContext(SidebarContext);
