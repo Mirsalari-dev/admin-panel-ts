@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { LangContextProvider } from './context/langContext';
 import { SidebarContextProvider } from './context/sidebarContext';
 import { ThemeContextProvider } from './context/themeContext';
 
@@ -9,12 +10,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <ThemeContextProvider>
-
-      <SidebarContextProvider>
-        <App />
-      </SidebarContextProvider>
-    </ThemeContextProvider>
+    <LangContextProvider>
+      <ThemeContextProvider>
+        <SidebarContextProvider>
+          <App />
+        </SidebarContextProvider>
+      </ThemeContextProvider>
+    </LangContextProvider>
 
   </React.StrictMode>
 );
