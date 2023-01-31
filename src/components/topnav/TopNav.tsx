@@ -4,6 +4,7 @@ import { useWindowSize } from "usehooks-ts";
 import SidebarContext from '../../context/sidebarContext';
 
 import classes from "./TopNav.module.scss";
+import SearchBox from "./searchBox/SearchBox";
 
 function TopNav() {
   const sideOpenCtx = useContext(SidebarContext);
