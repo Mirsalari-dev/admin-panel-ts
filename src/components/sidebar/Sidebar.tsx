@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import classes from "./Sidebar.module.scss";
 import { Icon } from "@iconify/react";
 import { useWindowSize } from 'usehooks-ts';
 import sidebarNav from '../../config/sidebarNav';
-
-
-
+import SidebarContext from '../../context/sidebarContext';
 
 const Sidebar = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const location = useLocation();
     const { width } = useWindowSize();
-
-
+    const sidebarCtx = useContext(SidebarContext);
 
     function openSidebarHandler() {
         //for width>768(tablet size) if sidebar was open in width<768 was opened too.
@@ -25,7 +22,6 @@ const Sidebar = () => {
         openSidebarHandler();
     }
 
-
     useEffect(() => {
         const curPath = window.location.pathname.split("/")[1];
         const activeItem = sidebarNav.findIndex((item) => item.section === curPath);
@@ -34,10 +30,13 @@ const Sidebar = () => {
     }, [location]);
 
     return (
-        <div>
+        <div
+            className={`${classes.sidebar} ${!sidebarCtx.isOpen && classes.sidebar_close
+                }`}
+        >
             {/* <div className={classes.sidebar__logo}>
-          <img src={images.logo} />
-        </div> */}
+            <img src={images.logo} alt="digikala" />
+          </div> */}
             <div className={classes.sidebar__menu}>
                 {sidebarNav.map((nav, index) => (
                     <Link
