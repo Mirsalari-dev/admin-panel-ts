@@ -1,8 +1,10 @@
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 
 import classes from "./SearchBox.module.scss";
 
 function SearchBox() {
+  const { t } = useTranslation();
 
   return (
     <div className={classes.searchBox}>
@@ -13,9 +15,9 @@ function SearchBox() {
       />
       <input
         type="search"
-        placeholder="search"
         name="search"
         className={classes.searchBox_input}
+        placeholder={t("search")}
       />
     </div>
   );
