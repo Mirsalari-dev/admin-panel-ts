@@ -6,13 +6,16 @@ type langContextObj = {
   lang: string | null;
   setLang: (sLang: string) => void;
 };
+interface Props {
+  children: React.ReactNode;
+}
 
 const LangContext = React.createContext<langContextObj>({
   lang: "",
-  setLang: (slang) => {},
+  setLang: (slang) => { },
 });
 
-export const LangContextProvider: React.FC = (props) => {
+export const LangContextProvider: React.FC<Props> = (props) => {
   const [lang, setLang] = useLocalStorage("language", "en");
 
   useEffect(() => {
