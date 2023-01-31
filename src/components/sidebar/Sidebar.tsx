@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import { useWindowSize } from 'usehooks-ts';
 import sidebarNav from '../../config/sidebarNav';
 import SidebarContext from '../../context/sidebarContext';
+import logo from "../../assets/images/logo.svg"
 
 const Sidebar = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -34,9 +35,9 @@ const Sidebar = () => {
             className={`${classes.sidebar} ${!sidebarCtx.isOpen && classes.sidebar_close
                 }`}
         >
-            {/* <div className={classes.sidebar__logo}>
-            <img src={images.logo} alt="digikala" />
-          </div> */}
+            <div className={classes.sidebar__logo}>
+            <img src={logo} alt="digikala" />
+          </div>
             <div className={classes.sidebar__menu}>
                 {sidebarNav.map((nav, index) => (
                     <Link
