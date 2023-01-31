@@ -5,7 +5,6 @@ function ThemeBox() {
 
   return (
     <div className={classes.themeBox}>
-  
     </div>
   );
 }
