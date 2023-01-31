@@ -2,9 +2,10 @@ import React from "react";
 
 import { useTranslation } from "react-i18next";
 import classes from "./Summary.module.scss";
+import SummaryBox from "./SummaryBox";
 
 
- interface IsummData {
+ export interface IsummData {
   icon: string;
   text: string;
   amount: string;
