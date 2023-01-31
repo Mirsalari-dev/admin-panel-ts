@@ -1,15 +1,11 @@
-import React from "react";
-import { Icon } from "@iconify/react";
+import React from 'react';
 
-import classes from "./LangBox.module.scss";
-
-function LangBox() {
-
+const LangBox = () => {
   return (
-    <div className={classes.lang}>
-     
+    <div>
+      
     </div>
   );
-}
+};
 
 export default LangBox;

@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useContext } from "react";
+import ThemeContext from "../../../../context/themeContext";
+import classes from "./ThemeBox.module.scss";
 
-const ThemeBox = () => {
+function ThemeBox() {
+  // const [theme, setTheme] = useState("light");
+  const themeCtx = useContext(ThemeContext);
+  let theme = themeCtx.theme;
   return (
-    <div>
-      
+    <div className={classes.themeBox} onClick={() => themeCtx.toggleTheme()}>
+      <div
+        className={`${classes.toggle} ${
+          theme === "dark" ? classes.darkMode : ""
+        }`}
+      ></div>
     </div>
   );
-};
+}
 
 export default ThemeBox;
