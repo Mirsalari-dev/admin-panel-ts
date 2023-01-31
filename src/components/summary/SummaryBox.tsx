@@ -3,12 +3,15 @@ import { useTranslation } from "react-i18next";
 import { IsummData as Props } from "../summary/Summary";
 import { Icon } from "@iconify/react";
 import classes from "./SummaryBox.module.scss";
+import Card from "../UI/card/Card";
 
 
 const SummaryBox: React.FC<{ item: Props }> = (props) => {
   const { t } = useTranslation();
   return (
     <div className={classes.summary__box}>
+      <Card>
+
         <div className={classes.summary__box__wrapper}>
           <div className={classes.summary__box__icon}>
             <Icon icon={props.item.icon} width="56" />
@@ -21,6 +24,7 @@ const SummaryBox: React.FC<{ item: Props }> = (props) => {
             </div>
           </div>
         </div>
+      </Card>
     </div>
   );
 };
