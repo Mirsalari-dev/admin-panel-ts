@@ -1,12 +1,11 @@
-import React from "react";
-import classes from "./ThemeBox.module.scss";
+import React from 'react';
 
-function ThemeBox() {
-
+const ThemeBox = () => {
   return (
-    <div className={classes.themeBox}>
+    <div>
+      
     </div>
   );
-}
+};
 
 export default ThemeBox;
