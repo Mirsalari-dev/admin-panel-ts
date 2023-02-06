@@ -3,6 +3,7 @@ import { Itable as Props, complex } from "../../../interfaces/Itable";
 import Card from "../../UI/card/Card";
 import { useTranslation } from "react-i18next";
 import classes from "./CustomTable.module.scss";
+import Badge from "../../UI/badge/Badge";
 
 const CustomTable: React.FC<Props> = (props) => {
 
@@ -27,7 +28,7 @@ const CustomTable: React.FC<Props> = (props) => {
           <td>{item.totalPrice}</td>
           <td>{item.date}</td>
           <td>
-            status
+          <Badge content={item.status} />
           </td>
         </tr>
       );
