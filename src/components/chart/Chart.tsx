@@ -6,10 +6,13 @@ import { useTranslation } from "react-i18next";
 import { useLayoutEffect } from "react";
 import Card from "../UI/card/Card";
 
+
+
 const Chart = () => {
     const { t } = useTranslation();
 
     useLayoutEffect(() => {
+
         let root: any = am5.Root.new("chartdiv");
         root._logo.dispose();
 
@@ -57,8 +60,11 @@ const Chart = () => {
         var xtooltipRtl = am5.Tooltip.new(root, {})
         xtooltipRtl.label.setAll({
             direction: "rtl",
-            fontFamily: ""
+            fontFamily: "iranyekan"
         })
+
+        root.interfaceColors.set("text", am5.color(0xa3a3a3));
+
 
         var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
             maxDeviation: 0.3,
@@ -104,41 +110,32 @@ const Chart = () => {
         // Set data
         // var data = dataChart;
         var data = [{
-            month: "فروردین",
-            value: 2025
-        }, {
-            month: "اردیبهشت",
-            value: 1882
-        }, {
-            month: "خرداد",
-            value: 1809
-        }, {
-            month: "تیر",
-            value: 1722
-        }, {
-            month: "مرداد",
-            value: 1522
-        }, {
-            month: "شهریور",
-            value: 1414
-        }, {
-            month: "مهر",
-            value: 1120
-        }, {
-            month: "آبان",
-            value: 998
-        }, {
-            month: "آذر",
-            value: 875
-        }, {
             month: "دی",
-            value: 789
+            value: 11.8
         }, {
             month: "بهمن",
-            value: 658
+            value: 6.8
         }, {
             month: "اسنفد",
-            value: 598
+            value: 5.98
+        }, {
+            month: "فروردین",
+            value: 17.02
+        }, {
+            month: "اردیبهشت",
+            value: 18.22
+        }, {
+            month: "خرداد",
+            value: 15
+        }, {
+            month: "تیر",
+            value: 17.22
+        }, {
+            month: "مرداد",
+            value: 15.22
+        }, {
+            month: "شهریور",
+            value: 14.14
         }];
 
         xAxis.data.setAll(data);
@@ -150,7 +147,7 @@ const Chart = () => {
         series.appear(1000);
         chart.appear(1000, 100);
 
-        // root.current = root;
+        root.current = root;
 
         return () => {
             root.dispose();
@@ -159,7 +156,8 @@ const Chart = () => {
 
     return (
         <section className={classes.chart}>
-            <p className="subTitle">{t("quickAnalysis")}</p>
+            <p className="subTitle">{t("quickAnalysis")}<span>{t("milT")}</span>
+            </p>
             <Card>
                 <div className={classes.chart__wrapper}>
                     <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
