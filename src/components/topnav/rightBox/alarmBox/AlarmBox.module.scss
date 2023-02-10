@@ -23,7 +23,15 @@
         border-radius: 50%;
         width: 16px;
         height: 16px;
-        color: white;
         text-align: center;
+        &__text{
+            color: white;
+            font-size: 14px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            translate: -50% -50%;
+            
+        }
     }
 }

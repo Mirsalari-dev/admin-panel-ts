@@ -12,6 +12,7 @@ i18n
         translation: {
           AmirhosseinMirsalari: "Amirhossein Mirsalari",
           admin: "admin",
+          
           dashboard: "Dashboard",
           orders: "Orders",
           products: "Products",
@@ -74,6 +75,7 @@ i18n
           salesAmount: "5,340",
           orderAmount: "3000",
           revenueAmount: "2,500",
+          3: "3",
           currency: "$",
           summaryOfSale: "Chart Of Sale",
           summaryOfRevenue: "Chart Of Revenue",
@@ -159,6 +161,7 @@ i18n
           rememberMe: "مرا به خاطر بسپار",
           salesAmount: "۲۴,۰۰۰,۰۰۰",
           orderAmount: "۳۰۰۰",
+          3: "۳",
           revenueAmount: "۱۲,۰۰۰,۰۰۰",
           currency: "تومان",
           summaryOfSale: "نمودار فروش",
