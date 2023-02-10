@@ -1,0 +1,29 @@
+@use "../../../../scss/abstracts/" as *;
+
+.alarm{
+    width: 36px;
+    height: 36px;
+    background-color: #efefef;
+    margin-left: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+
+    &__icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:8px 0;
+    }
+    &__span{
+        position: absolute;
+        top: 0;
+        margin-top: -5px;
+        background-color: red;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        color: white;
+        text-align: center;
+    }
+}
