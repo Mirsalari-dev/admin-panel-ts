@@ -1,6 +1,6 @@
 @use "../../../../scss/abstracts/" as *;
 
-.alarm{
+.alarm {
     width: 36px;
     height: 36px;
     background-color: #efefef;
@@ -9,13 +9,14 @@
     cursor: pointer;
     position: relative;
 
-    &__icon{
+    &__icon {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin:8px 0;
+        margin: 8px 0;
     }
-    &__span{
+
+    &__span {
         position: absolute;
         top: 0;
         margin-top: -5px;
@@ -24,14 +25,34 @@
         width: 16px;
         height: 16px;
         text-align: center;
-        &__text{
+
+        &__text {
             color: white;
             font-size: 12px;
             position: absolute;
-            top:50%;
+            top: 50%;
             left: 50%;
             translate: -50% -50%;
-            
+
         }
     }
+
+    &__menu {
+        box-shadow: 1px 0 8px 0 rgba(0, 0, 0, 0.1);
+        background-color: var(--card-bgc);
+        transition: all 0.3s ease-in-out;
+        padding: 0.5rem;
+        position: absolute;
+        width: 100px;
+        opacity: 0;
+        top: 160%;
+        margin-top: 3px;
+
+        &__show {
+            opacity: 1;
+            top: 120%;
+            user-select: auto;
+        }
+    }
+
 }
