@@ -14,7 +14,6 @@ function App() {
           <Route path="/" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
 
         </Routes>
       </Suspense>
