@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import "./scss/App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
+import NotFound from './pages/NotFound';
 
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 
@@ -13,6 +14,8 @@ function App() {
           <Route path="/" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
+
         </Routes>
       </Suspense>
     </BrowserRouter>
