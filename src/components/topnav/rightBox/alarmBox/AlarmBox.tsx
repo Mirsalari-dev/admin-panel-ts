@@ -34,7 +34,7 @@ const AlarmBox = () => {
     return (
         <div className={classes.alarm} onClick={showBoxHandler}>
             <div className={classes.alarm__icon}>
-                <Icon icon="ph:bell-ringing-duotone" width="20" />
+                <Icon icon="ph:bell-ringing-duotone" color="black" width="20" />
             </div>
             <div className={classes.alarm__span}>
                 <span className={classes.alarm__span__text}>{t("3")}</span>
@@ -54,7 +54,7 @@ const AlarmBox = () => {
                 <div className={classes.alarm__menu__allpm}>
                     {t("viewAllMessage")}
                     <div>
-                        <Icon icon={lang==="en" ? "material-symbols:arrow-forward-ios-rounded" : "material-symbols:arrow-back-ios-new-rounded" } />
+                        <Icon color='red' icon={lang==="en" ? "material-symbols:arrow-forward-ios-rounded" : "material-symbols:arrow-back-ios-new-rounded" } />
                     </div>
                 </div>
             </div>
