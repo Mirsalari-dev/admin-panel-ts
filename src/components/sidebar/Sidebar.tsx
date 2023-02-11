@@ -28,6 +28,9 @@ const Sidebar = () => {
     if (width <= 768) document.body.classList.toggle("sidebar__open");
   }
 
+  console.log(width);
+  
+
   function logoutHandler() {
     openSidebarHandler();
   }

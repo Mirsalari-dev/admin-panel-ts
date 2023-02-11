@@ -2,6 +2,11 @@
 
 .profile {
   @include flex();
+
+  @media screen and (max-width: 469px) {
+    display: none;
+  }
+
   //   margin-left: auto;
   &__avatar {
     display: flex;
@@ -10,6 +15,9 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 0.5rem;
+
+   
+
     & img {
       object-fit: cover;
     }
@@ -19,6 +27,7 @@
     font-size: $fontSizeBodyLarge;
     white-space: nowrap;
   }
+
   &__role {
     font-size: $fontSizeBodyMedium;
     color: darkgray;
