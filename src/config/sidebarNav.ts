@@ -6,10 +6,10 @@ const sidebarNav = [
     text: "Dashboard",
   },
   {
-    link: "/products",
-    section: "products",
+    link: "/shop",
+    section: "shop",
     icon: "icon-park-outline:ad-product",
-    text: "Products",
+    text: "Shop",
   },
   {
     link: "/customers",

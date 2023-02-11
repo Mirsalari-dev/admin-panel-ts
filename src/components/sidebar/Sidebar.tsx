@@ -65,7 +65,7 @@ const Sidebar = () => {
     
           <div className={[classes.sidebar__menu, classes.logout].join("")}>
             <Link
-              to="/login"
+              to="/"
               className={classes.sidebar__menu__item}
               onClick={logoutHandler}
             >
