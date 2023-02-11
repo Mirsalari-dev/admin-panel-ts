@@ -11,18 +11,18 @@ const sidebarNav = [
     icon: "icon-park-outline:ad-product",
     text: "Shop",
     children:[{
-      link: "/",
-      section: "dashboard",
+      link: "/products",
+      section: "products",
       icon: "lucide:layout-dashboard",
       text: "All Products",
     },{
-      link: "/",
-      section: "dashboard",
+      link: "/addproduct",
+      section: "addproduct",
       icon: "lucide:layout-dashboard",
       text: "Add Product",
     },{
-      link: "/",
-      section: "dashboard",
+      link: "/discount",
+      section: "discount",
       icon: "lucide:layout-dashboard",
       text: "Create discount code",
     },]

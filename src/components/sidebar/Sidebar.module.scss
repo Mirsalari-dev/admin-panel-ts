@@ -18,6 +18,7 @@
 
   &.sidebar_close {
     width: 50px;
+
     @include tablet {
       width: 100%;
     }
@@ -45,6 +46,7 @@
     @include tablet {
       padding-top: 1rem;
     }
+
     @include mobile {
       padding-top: 0.5rem;
     }
@@ -93,6 +95,7 @@
           height: $smallIconSize;
         }
       }
+
       &__txt {
         white-space: nowrap;
       }
@@ -112,10 +115,12 @@ html[dir="rtl"] {
         // padding-right: 16px;
         // font-weight: 500;
         font-size: 18px;
+
         // margin-bottom: 1.5rem;
         &.active {
           padding-right: 4px;
           font-weight: 700;
+
           &::before {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
@@ -130,15 +135,76 @@ html[dir="rtl"] {
         }
       }
     }
+
     &.sidebar_close .sidebar__logo {
       direction: ltr;
       width: 46px;
       margin-right: 10px;
       overflow: hidden;
+
       @include tablet {
         direction: rtl;
         width: auto;
       }
     }
   }
+  
+}
+
+.iconfa {
+  position: absolute;
+  left: 15px;
+  top: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--primaryColor)
+  }
+
+}
+
+.iconen {
+  position: absolute;
+  right: 15px;
+  top: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--primaryColor)
+  }
+
+}
+
+.icon__mobilefa {
+  position: absolute;
+  right: 170px;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--primaryColor)
+  }
+}
+
+.bg{
+  background-color: red;
+}
+
+.icon__mobileen {
+  position: absolute;
+  left: 170px;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--primaryColor)
+  }
+}
+
+.bg{
+  background-color: red;
 }
