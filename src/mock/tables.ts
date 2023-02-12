@@ -1,4 +1,4 @@
-
+import avt from "../assets/images/avt.jpg"
 const data = {
   topCustomers: {
     head: ["customer", "totalOrders", "totalSpending"],
@@ -83,8 +83,7 @@ const data = {
    customers : [
     {
       ID: 0,
-      avatar:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      avatar:`${avt}`,
       userName: "Amirhossein Mirsalari",
       email: "amir.tk7@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -95,7 +94,7 @@ const data = {
     {
       ID: 1,
       avatar:
-        "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "https://i.pravatar.cc/60?img=69",
       userName: "John Smith",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -105,8 +104,7 @@ const data = {
     },
     {
       ID: 2,
-      avatar:
-        "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
+      avatar:"https://i.pravatar.cc/60?img=68",
       userName: "Kyle Simpson",
       email: "Kyle_simpson@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -117,7 +115,7 @@ const data = {
     {
       ID: 3,
       avatar:
-        "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "https://i.pravatar.cc/60?img=61",
       userName: "	Maximilian Doe",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -127,8 +125,7 @@ const data = {
     },
     {
       ID: 4,
-      avatar:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      avatar:"https://i.pravatar.cc/60?img=59",
       userName: "John Smith",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -139,7 +136,7 @@ const data = {
     {
       ID: 5,
       avatar:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
+        "https://i.pravatar.cc/60?img=22",
       userName: "John Smith",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -149,8 +146,7 @@ const data = {
     },
     {
       ID: 6,
-      avatar:
-        "https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      avatar:"https://i.pravatar.cc/60?img=42",
       userName: "John Smith",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -160,8 +156,7 @@ const data = {
     },
     {
       ID: 7,
-      avatar:
-        "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      avatar:"https://i.pravatar.cc/60?img=44",
       userName: "Andrei Neagoie",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -171,8 +166,7 @@ const data = {
     },
     {
       ID: 8,
-      avatar:
-        "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+      avatar:"https://i.pravatar.cc/60?img=11",
       userName: "John Smith",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -182,8 +176,7 @@ const data = {
     },
     {
       ID: 9,
-      avatar:
-        "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=853&q=80",
+      avatar:"https://i.pravatar.cc/60?img=51",
       userName: "John Smith",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -193,8 +186,7 @@ const data = {
     },
     {
       ID: 10,
-      avatar:
-        "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80",
+      avatar:"https://i.pravatar.cc/60?img=21",
       userName: "Jason Bourne",
       email: "test@gmail.com",
       phoneNumber: "+98 918 123 45 67",
