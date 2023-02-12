@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import classes from "./Sidebar.module.scss";
 import { Icon } from "@iconify/react";
@@ -12,38 +12,46 @@ import LangContext from '../../context/langContext';
 
 
 const Sidebar = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [showHandler, setShowHandler] = useState(false);
+  const [accordionHeight, setAccordionHeight] = useState("0px");
+  const [marginBottom, setMarginBottom] = useState("0px");
 
   const location = useLocation();
   const { width } = useWindowSize();
   const sidebarCtx = useContext(SidebarContext);
   const { lang } = useContext(LangContext)
   const { t } = useTranslation()
+  const contentRef = useRef<any>(null);
+
 
   function openSidebarHandler() {
     //for width>768(tablet size) if sidebar was open in width<768 was opened too.
     //just in case of tablet size and smaller then, sidebar__open can added.
     if (width <= 768) document.body.classList.toggle("sidebar__open");
-  }  
+  }
 
   function logoutHandler() {
     openSidebarHandler();
   }
 
+  const clickHandler = () => {
+    setShowHandler(showHandler => !showHandler)
+    setAccordionHeight(
+      showHandler ? "0px" : `${contentRef.current.scrollHeight}px`
+    );
+    setMarginBottom(
+      showHandler ? "0px" : `${contentRef.current.scrollHeight}px`
+    );
+  }
+
+
+
   useEffect(() => {
-    const curPath = window.location.pathname.split("/")[1];
-    console.log(curPath);
-
-    const activeItem = sidebarNav.findIndex((item) => item.section === curPath);
-
-    setActiveIndex(curPath.length === 0 ? 0 : activeItem);
-  }, [location]);
-
-  useEffect(() => {
-    if(!sidebarCtx.isOpen){
+    if (!sidebarCtx.isOpen) {
       setShowHandler(false)
-    } 
+      setAccordionHeight("0px")
+      setMarginBottom("0px")
+    }
   }, [sidebarCtx.isOpen]);
 
 
@@ -59,6 +67,7 @@ const Sidebar = () => {
         {sidebarNav.map((nav, index) => (
           <>
             <NavLink
+              ref={contentRef}
               to={nav.link}
               key={`nav-${index}`}
               className={(navClass) => (navClass.isActive ? `${classes.sidebar__menu__item} ${classes.active}` : `${classes.sidebar__menu__item}`)}
@@ -71,23 +80,24 @@ const Sidebar = () => {
                 {t(nav.section)}
               </div>
             </NavLink>
-            {nav.children && sidebarCtx.isOpen && <Icon className={lang === "fa" ? classes.iconfa : classes.iconen} onClick={() => setShowHandler(showHandler => !showHandler)} icon="material-symbols:arrow-drop-down-rounded" width="36" height="36" rotate={showHandler ? 2 : 0} />
+            {nav.children && sidebarCtx.isOpen && <Icon className={lang === "fa" ? classes.iconfa : classes.iconen} onClick={clickHandler} icon="material-symbols:arrow-drop-down-rounded" width="36" height="36" rotate={showHandler ? 2 : 0} />
             }
-            {nav.children && width <= 768 && <Icon onClick={() => setShowHandler(showHandler => !showHandler)} className={lang === "fa" ? classes.icon__mobilefa : classes.icon__mobileen} icon="material-symbols:arrow-drop-down-rounded" width="36" height="36" />
+            {nav.children && width <= 768 && <Icon onClick={clickHandler} className={lang === "fa" ? classes.icon__mobilefa : classes.icon__mobileen} icon="material-symbols:arrow-drop-down-rounded" width="36" height="36" />
             }
-            {showHandler && nav.children?.map((n, index) => {
+            {nav.children?.map((n, index) => {
               return (
                 <NavLink
                   to={n.link}
                   key={`n-${index}`}
-                  className={(navClass) => (navClass.isActive ? `${classes.sidebar__menu__item} ${classes.active}` : `${classes.sidebar__menu__item}`)}
-                  style={{ marginRight: "30px",marginLeft:"30px" }}
+                  className={(navClass) => (navClass.isActive ? `${classes.sidebar__menu__item} ${classes.active} ` : `${classes.sidebar__menu__item}`)}
+                  style={{ marginRight: "30px", marginLeft: "30px", maxHeight: `${accordionHeight}`,marginBottom:`${marginBottom}` }}
+                  
                   onClick={openSidebarHandler}
                 >
-                  <div className={classes.sidebar__menu__item__icon}>
+                  <div className={classes.sidebar__menu__item__icon} >
                     <Icon icon={n.icon} />
                   </div>
-                  <div className={classes.sidebar__menu__item__txt}>
+                  <div className={classes.sidebar__menu__item__txt} >
                     {t(n.section)}
                   </div>
                 </NavLink>
