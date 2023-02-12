@@ -11,12 +11,24 @@ export type TlatestTransactions = {
   date: string;
   status: string;
 };
-
+export interface IcustomersTable {
+  ID: number | string;
+  userName: string;
+  avatar: string;
+  email: string;
+  phoneNumber: string;
+  totalOrders: number;
+  totalSpend: string;
+  location: string;
+}
 export type complex =
   | ItopCustomers
   | TlatestTransactions
+  | IcustomersTable
+
 
 export interface Itable {
+  limit?: number;
   headData: string[];
   bodyData: (
     | ItopCustomers
