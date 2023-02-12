@@ -6,6 +6,7 @@ import classes from "./CustomTable.module.scss";
 import Badge from "../../UI/badge/Badge";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import Modal from "../../UI/modal/Modal";
 
 const CustomTable: React.FC<Props> = (props) => {
 
@@ -34,11 +35,11 @@ const CustomTable: React.FC<Props> = (props) => {
           <td>{item.totalPrice}</td>
           <td>{item.date}</td>
           <td>
-          <Badge content={item.status} />
+            <Badge content={item.status} />
           </td>
         </tr>
       );
-    }else if ("email" in item) {
+    } else if ("email" in item) {
       //for implementing customers table
       return (
         <tr key={index}>
@@ -74,7 +75,7 @@ const CustomTable: React.FC<Props> = (props) => {
           </td>
         </tr>
       );
-    } 
+    }
   }
   const initDataShow = () => {
     return props.limit && props.bodyData
@@ -119,12 +120,20 @@ const CustomTable: React.FC<Props> = (props) => {
 
   return (
     <>
+      {showModal ? (
+        <Modal
+          title={t("deleteCustomer")}
+          message={`${t("modalMessage")}`}
+          onConfirm={showModalHandler}
+        />
+      ) : null}
+
       <div className={classes.container}>
         <Card>
           <div className={classes.wrapper}>
             <div className={classes.table__wrapper}>
               <table
-                className={classes.table}
+                className={props.limit ? classes.largeTable : classes.table}
               >
                 {props.headData ? (
                   <thead>
@@ -136,10 +145,25 @@ const CustomTable: React.FC<Props> = (props) => {
                   </thead>
                 ) : null}
                 <tbody>
-                  {props.bodyData.map((item, index) => tableBody(item, index))}
+                  {dataShow.map((item, index) => tableBody(item, index))}
                 </tbody>
               </table>
             </div>
+
+            {pages > 1 ? (
+              <div className={classes.table__pagination}>
+                {range.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`${classes.table__pagination_item} ${currPage === index ? classes.active : ""
+                      }`}
+                    onClick={() => selectPage(index)}
+                  >
+                    {item + 1}
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
         </Card>
       </div>
