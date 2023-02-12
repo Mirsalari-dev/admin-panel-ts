@@ -33,5 +33,6 @@ export interface Itable {
   bodyData: (
     | ItopCustomers
     | TlatestTransactions
+    | IcustomersTable
   )[];
 }
