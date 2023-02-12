@@ -21,15 +21,11 @@ const Sidebar = () => {
   const { lang } = useContext(LangContext)
   const { t } = useTranslation()
 
-
   function openSidebarHandler() {
     //for width>768(tablet size) if sidebar was open in width<768 was opened too.
     //just in case of tablet size and smaller then, sidebar__open can added.
     if (width <= 768) document.body.classList.toggle("sidebar__open");
-  }
-
-  console.log(width);
-  
+  }  
 
   function logoutHandler() {
     openSidebarHandler();
@@ -43,6 +39,13 @@ const Sidebar = () => {
 
     setActiveIndex(curPath.length === 0 ? 0 : activeItem);
   }, [location]);
+
+  useEffect(() => {
+    if(!sidebarCtx.isOpen){
+      setShowHandler(false)
+    } 
+  }, [sidebarCtx.isOpen]);
+
 
   return (
     <div
