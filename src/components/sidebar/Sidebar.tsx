@@ -90,8 +90,8 @@ const Sidebar = () => {
                   to={n.link}
                   key={`n-${index}`}
                   className={(navClass) => (navClass.isActive ? `${classes.sidebar__menu__item} ${classes.active} ` : `${classes.sidebar__menu__item}`)}
-                  style={{ marginRight: "30px", marginLeft: "30px", maxHeight: `${accordionHeight}`,marginBottom:`${marginBottom}` }}
-                  
+                  style={{ marginRight: "30px", marginLeft: "30px", maxHeight: `${accordionHeight}`, marginBottom: `${marginBottom}` }}
+
                   onClick={openSidebarHandler}
                 >
                   <div className={classes.sidebar__menu__item__icon} >
