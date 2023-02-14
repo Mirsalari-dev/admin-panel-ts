@@ -75,6 +75,40 @@ const CustomTable: React.FC<Props> = (props) => {
           </td>
         </tr>
       );
+    }else if ("category" in item) {
+      //for implementing products table
+      return (
+        <tr key={index}>
+          <td>{item.ID}</td>
+          <td className={classes.product_name}>
+            <img
+              className={classes.product_img}
+              src={item.pic}
+              alt="user avatar"
+            />
+            {item.product}
+          </td>
+          <td>{item.inventory}</td>
+          <td>{item.price}</td>
+          <td>{item.category}</td>
+          <td className={classes.actions}>
+            <Icon icon="charm:menu-kebab" />
+            <div className={classes.actions__box}>
+              <div
+                className={classes.actions__delete}
+                onClick={showModalHandler}
+              >
+                <Icon icon="fluent:delete-24-regular" width="24" />
+              </div>
+              <div className={classes.actions__edit}>
+                <Link to={`/products/${item.ID}`}>
+                  <Icon icon="fluent:edit-16-regular" width="24" />
+                </Link>
+              </div>
+            </div>
+          </td>
+        </tr>
+      );
     }
   }
   const initDataShow = () => {
