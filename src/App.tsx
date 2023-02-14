@@ -7,6 +7,8 @@ import NotFound from './pages/NotFound';
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Customers = React.lazy(() => import("./pages/Customers"));
 const CustomerEdit = React.lazy(() => import("./pages/CustomerEdit"));
+const Products = React.lazy(() => import("./pages/Products"));
+
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/customers/:customerId" element={<CustomerEdit />} />
+          <Route path="/products" element={<Products />} />
 
           </Route>
           <Route path="*" element={<NotFound />} />
