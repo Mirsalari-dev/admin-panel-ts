@@ -1,4 +1,8 @@
 import avt from "../assets/images/avt.jpg"
+import iphone from "../assets/images/iphone.png"
+import airpod from "../assets/images/airpod.png"
+import perfume from "../assets/images/perfume.png"
+
 const data = {
   topCustomers: {
     head: ["customer", "totalOrders", "totalSpending"],
@@ -206,7 +210,7 @@ const data = {
   products: [
     {
       ID: 0,
-      pic: "https://images.unsplash.com/photo-1628773193539-ad29c647c071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      pic:`${airpod}`,
       product: "Apple AirPods",
       inventory: 30,
       price: "$200.00",
@@ -214,7 +218,7 @@ const data = {
     },
     {
       ID: 1,
-      pic: "https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      pic:`${iphone}`,
       product: "NUBWO G06",
       inventory: 28,
       price: "$120.00",
@@ -222,7 +226,7 @@ const data = {
     },
     {
       ID: 2,
-      pic: "https://images.unsplash.com/photo-1607860087860-c46e865f6ab0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=426&q=80",
+      pic:`${perfume}`,
       product: "Hooded Sweatshirt",
       inventory: 10,
       price: "$10.00",
@@ -230,7 +234,7 @@ const data = {
     },
     {
       ID: 3,
-      pic: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=865&q=80",
+      pic:`${airpod}`,
       product: "Keyboard",
       inventory: 50,
       price: "$50.00",
@@ -238,7 +242,7 @@ const data = {
     },
     {
       ID: 4,
-      pic: "https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      pic:`${perfume}`,
       product: "T-Shirt",
       inventory: 20,
       price: "$75.00",
@@ -246,7 +250,7 @@ const data = {
     },
     {
       ID: 5,
-      pic: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      pic:`${iphone}`,
       product: "LED Monitor",
       inventory: 31,
       price: "$510.00",
@@ -254,7 +258,7 @@ const data = {
     },
     {
       ID: 6,
-      pic: "https://images.unsplash.com/photo-1640025867572-f6b3a8410c81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+      pic:`${airpod}`,
       product: "Socks",
       inventory: 5,
       price: "$10.00",
@@ -262,7 +266,7 @@ const data = {
     },
     {
       ID: 7,
-      pic: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+      pic:`${perfume}`,
       product: "Mouse",
       inventory: 3,
       price: "$16.00",
@@ -270,7 +274,7 @@ const data = {
     },
     {
       ID: 8,
-      pic: "https://images.unsplash.com/photo-1625753783470-ec2ab4efeeec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+      pic:`${iphone}`,
       product: "Mielle",
       inventory: 36,
       price: "$170.00",
@@ -278,7 +282,7 @@ const data = {
     },
     {
       ID: 9,
-      pic: "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      pic:`${airpod}`,
       product: "hat cap",
       inventory: 17,
       price: "$25.00",
@@ -286,7 +290,7 @@ const data = {
     },
     {
       ID: 10,
-      pic: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      pic:`${perfume}`,
       product: "CeraVe",
       inventory: 7,
       price: "$220.00",
@@ -294,7 +298,7 @@ const data = {
     },
     {
       ID: 11,
-      pic: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      pic:`${iphone}`,
       product: "Neutrogena",
       inventory: 30,
       price: "$205.00",
