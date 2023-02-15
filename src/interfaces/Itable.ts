@@ -32,11 +32,20 @@ export interface IProductsTable {
   category: string;
 }
 
+export type TCoupons = {
+  code: number | string;
+  percent: number;
+  expireDate: string;
+  createdDate: string;
+  status: string;
+};
+
 export type complex =
   | ItopCustomers
   | TlatestTransactions
   | IcustomersTable
-  | IProductsTable;
+  | IProductsTable
+  | TCoupons;
 
 export interface Itable {
   limit?: number;
@@ -47,5 +56,6 @@ export interface Itable {
     | TlatestTransactions
     | IcustomersTable
     | IProductsTable
+    | TCoupons
   )[];
 }
