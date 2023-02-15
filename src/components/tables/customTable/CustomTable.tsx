@@ -109,6 +109,35 @@ const CustomTable: React.FC<Props> = (props) => {
           </td>
         </tr>
       );
+    }else if ("percent" in item) {
+      //for implementing latest transactions
+      return (
+        <tr key={index}>
+          <td>{item.code}</td>
+          <td>{item.percent}</td>
+          <td>{item.createdDate}</td>
+          <td>{item.expireDate}</td>
+          <td>
+            <Badge content={item.status} />
+          </td>
+          <td className={classes.actions}>
+            <Icon icon="charm:menu-kebab" />
+            <div className={classes.actions__box}>
+              <div
+                className={classes.actions__delete}
+                onClick={showModalHandler}
+              >
+                <Icon icon="fluent:delete-24-regular" width="24" />
+              </div>
+              <div className={classes.actions__edit}>
+                <Link to={`/coupons/${item.code}`}>
+                  <Icon icon="fluent:edit-16-regular" width="24" />
+                </Link>
+              </div>
+            </div>
+          </td>
+        </tr>
+      );
     }
   }
   const initDataShow = () => {
