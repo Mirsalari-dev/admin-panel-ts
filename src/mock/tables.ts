@@ -379,22 +379,22 @@ const data = {
     },
   ],
   coupons: {
-    head: ["code", "percentDiscount", "expireDate","createdDate","status"],
+    head: ["code", "percentDiscount", "expireDate","createdDate","status","actions"],
     body: [
       {
         code: "tab20",
-        percentDiscount: 20,
+        percent: 20,
         expireDate: " ۲ خرداد ۱۴۰۰ ",
         createdDate: "۲ اردیبهشت ۱۴۰۰ ",
-        status: "Inactive",
+        status: "rejected",
       },
 
       {
         code: "code10",
-        percentDiscount: 10,
+        percent: 10,
         expireDate: "۷ تیر ۱۴۰۱ ",
         createdDate: "۷ خرداد ۱۴۰۱ ",
-        status: "active",
+        status: "rejected",
       },
     ],
   },
