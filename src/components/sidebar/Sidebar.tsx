@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classes from "./Sidebar.module.scss";
 import { Icon } from "@iconify/react";
 import { useWindowSize } from 'usehooks-ts';
@@ -16,7 +16,6 @@ const Sidebar = () => {
   const [accordionHeight, setAccordionHeight] = useState("0px");
   const [marginBottom, setMarginBottom] = useState("0px");
 
-  const location = useLocation();
   const { width } = useWindowSize();
   const sidebarCtx = useContext(SidebarContext);
   const { lang } = useContext(LangContext)

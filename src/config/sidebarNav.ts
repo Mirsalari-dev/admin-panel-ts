@@ -6,7 +6,7 @@ const sidebarNav = [
     text: "Dashboard",
   },
   {
-    link: "/shop",
+    link: "/products",
     section: "shop",
     icon: "icon-park-outline:ad-product",
     text: "Shop",
@@ -32,6 +32,12 @@ const sidebarNav = [
     section: "customers",
     icon: "ph:users-bold",
     text: "Customers",
+  },
+  {
+    link: "/transactions",
+    section: "transactions",
+    icon: "lucide:layout-dashboard",
+    text: "transactions",
   },
 ];
 

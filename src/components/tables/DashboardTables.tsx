@@ -13,7 +13,7 @@ const Table = () => {
       >
         <div className={classes.table__title}>
           <p className="subTitle">{t("topCustomers")}</p>
-          <Link to="/">{t("viewAll")}</Link>
+          <Link to="/customers">{t("viewAll")}</Link>
         </div>
         <CustomTable
           headData={data.topCustomers.head}
@@ -25,7 +25,7 @@ const Table = () => {
       >
         <div className={classes.table__title}>
           <p className="subTitle">{t("latestTransaction")}</p>
-          <Link to="/">{t("viewAll")}</Link>
+          <Link to="/transactions">{t("viewAll")}</Link>
         </div>
         <CustomTable
           headData={data.latestOrders.header}
