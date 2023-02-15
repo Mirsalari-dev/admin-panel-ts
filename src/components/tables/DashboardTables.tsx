@@ -29,7 +29,7 @@ const Table = () => {
         </div>
         <CustomTable
           headData={data.latestOrders.header}
-          bodyData={data.latestOrders.body}
+          bodyData={data.latestOrders.body.slice(0,5)}
         />
       </div>
     </section>
