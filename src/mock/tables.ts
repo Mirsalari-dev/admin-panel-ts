@@ -378,6 +378,26 @@ const data = {
       category: "beauty",
     },
   ],
+  coupons: {
+    head: ["code", "percentDiscount", "expireDate","createdDate","status"],
+    body: [
+      {
+        code: "tab20",
+        percentDiscount: 20,
+        expireDate: " ۲ خرداد ۱۴۰۰ ",
+        createdDate: "۲ اردیبهشت ۱۴۰۰ ",
+        status: "Inactive",
+      },
+
+      {
+        code: "code10",
+        percentDiscount: 10,
+        expireDate: "۷ تیر ۱۴۰۱ ",
+        createdDate: "۷ خرداد ۱۴۰۱ ",
+        status: "active",
+      },
+    ],
+  },
 };
 
 export default data;
