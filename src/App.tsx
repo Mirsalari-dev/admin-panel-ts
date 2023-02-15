@@ -1,8 +1,10 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import "./scss/App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import NotFound from './pages/NotFound';
+import NProgress from 'nprogress';
+
 
 
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
@@ -15,18 +17,29 @@ const Transactions = React.lazy(() => import("./pages/Transactions"));
 
 function App() {
 
+  const LazyLoad:any = () => {
+    useEffect(() => {
+        NProgress.start();
+
+        return () => {
+            NProgress.done();
+        };
+    });
+
+    return '';
+};
 
   return (
     <BrowserRouter>
-      <Suspense>
+      <Suspense fallback={<LazyLoad />}>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/customers/:customerId" element={<CustomerEdit />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:productId" element={<ProductEdit />} />
-          <Route path="/transactions" element={<Transactions />} />
+            <Route index element={<Dashboard />} />
+            <Route path="/customers" element={<Customers />} />
+            <Route path="/customers/:customerId" element={<CustomerEdit />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:productId" element={<ProductEdit />} />
+            <Route path="/transactions" element={<Transactions />} />
           </Route>
           <Route path="*" element={<NotFound />} />
 
