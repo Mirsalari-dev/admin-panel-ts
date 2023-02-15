@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import NotFound from './pages/NotFound';
 
+
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Customers = React.lazy(() => import("./pages/Customers"));
 const CustomerEdit = React.lazy(() => import("./pages/CustomerEdit"));
@@ -13,6 +14,8 @@ const Transactions = React.lazy(() => import("./pages/Transactions"));
 
 
 function App() {
+
+
   return (
     <BrowserRouter>
       <Suspense>
