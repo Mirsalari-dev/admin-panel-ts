@@ -113,11 +113,10 @@ const CustomTable: React.FC<Props> = (props) => {
       //for implementing latest transactions
       return (
         <tr key={index}>
-          <td>{item.code}</td>
-
+          <td>{item.discount}</td>
           <td>{item.percent}</td>
-          <td>{item.createdDate}</td>
           <td>{item.expireDate}</td>
+          <td>{item.createdDate}</td>
           <td>
             <Badge content={item.status} />
           </td>
@@ -131,7 +130,7 @@ const CustomTable: React.FC<Props> = (props) => {
                 <Icon icon="fluent:delete-24-regular" width="24" />
               </div>
               <div className={classes.actions__edit}>
-                <Link to={`/customers/${item.code}`}>
+                <Link to={`/customers/${item.discount}`}>
                   <Icon icon="fluent:edit-16-regular" width="24" />
                 </Link>
               </div>

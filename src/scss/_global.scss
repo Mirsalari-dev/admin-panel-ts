@@ -147,6 +147,11 @@ body {
   background-color: var(--rejected-bgc);
   color: var(--rejected-textColor);
 }
+.inactive {
+  background-color: var(--rejected-bgc);
+  color: var(--rejected-textColor);
+}
+
 
 .ltr {
   direction: ltr;
