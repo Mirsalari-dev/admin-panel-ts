@@ -94,9 +94,7 @@
 }
 
 .account {
-  @include flex(baseline, center);
-  flex-direction: column;
-  flex: 1;
+
   margin: 3rem;
   @media screen and (max-width: 1250px) {
     margin: 3rem 0.5rem;
@@ -134,9 +132,12 @@
     font-weight: 400;
     margin-top: 2rem;
     margin-bottom: 7rem;
+    margin-left: 10rem;
+
 
     @media screen and (max-width: 410px) {
       margin-bottom: 14rem;
+      
     }
   }
 }
