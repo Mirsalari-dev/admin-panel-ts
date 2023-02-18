@@ -151,6 +151,10 @@ body {
   background-color: var(--rejected-bgc);
   color: var(--rejected-textColor);
 }
+.active {
+  background-color: var(--approved-bgc);
+  color: var(--approved-textColor);
+}
 
 
 .ltr {

@@ -12,7 +12,7 @@ function CouponsEdit() {
 
   /* fallback in case of time limit to test firebase database will over */
   let couponsInfo: TCoupons = data.coupons.body.filter(
-    (item) => item.discount.toString() === couponsCode
+    (item) => item.discount === couponsCode
   )[0];
 
   let couponsEdit =<EditCoupons coupons={couponsInfo} />
@@ -20,7 +20,7 @@ function CouponsEdit() {
 
   return (
     <section>
-      <h2 className="title">{t("editCustomer")}</h2>
+      <h2 className="title">{t("editCoupons")}</h2>
       {couponsEdit}
     </section>
   );

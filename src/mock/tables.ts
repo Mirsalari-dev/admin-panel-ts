@@ -50,67 +50,67 @@ const data = {
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "approved",
-      },{
+      }, {
         orderId: "#OD1311",
         customer: "Reza asadi",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "rejected",
-      },{
+      }, {
         orderId: "#OD1651",
         customer: "Hoda Rezaei",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "approved",
-      },{
+      }, {
         orderId: "#OD1781",
         customer: "Kazem karami",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "pending",
-      },{
+      }, {
         orderId: "#OC3711",
         customer: "Negin salari",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "rejected",
-      },{
+      }, {
         orderId: "#OD1651",
         customer: "Hamid Hamedi",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "approved",
-      },{
+      }, {
         orderId: "#OD1333",
         customer: "Kiarash saadi",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "pending",
-      },{
+      }, {
         orderId: "#OD4851",
         customer: "Sahar soulati",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "rejected",
-      },{
+      }, {
         orderId: "#OD1873",
         customer: "Maryam molavi",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "approved",
-      },{
+      }, {
         orderId: "#OD1551",
         customer: "Meysam rohani",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "pending",
-      },{
+      }, {
         orderId: "#OD3871",
         customer: "Parisa Savari",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "rejected",
-      },{
+      }, {
         orderId: "#OD1111",
         customer: "Ali mohammadi",
         totalPrice: "$900",
@@ -283,7 +283,7 @@ const data = {
   products: [
     {
       ID: 0,
-      pic:`${airpod}`,
+      pic: `${airpod}`,
       product: "Apple AirPods",
       inventory: 30,
       price: "$200.00",
@@ -291,7 +291,7 @@ const data = {
     },
     {
       ID: 1,
-      pic:`${iphone}`,
+      pic: `${iphone}`,
       product: "NUBWO G06",
       inventory: 28,
       price: "$120.00",
@@ -299,7 +299,7 @@ const data = {
     },
     {
       ID: 2,
-      pic:`${perfume}`,
+      pic: `${perfume}`,
       product: "Hooded Sweatshirt",
       inventory: 10,
       price: "$10.00",
@@ -307,7 +307,7 @@ const data = {
     },
     {
       ID: 3,
-      pic:`${airpod}`,
+      pic: `${airpod}`,
       product: "Keyboard",
       inventory: 50,
       price: "$50.00",
@@ -315,7 +315,7 @@ const data = {
     },
     {
       ID: 4,
-      pic:`${perfume}`,
+      pic: `${perfume}`,
       product: "T-Shirt",
       inventory: 20,
       price: "$75.00",
@@ -323,7 +323,7 @@ const data = {
     },
     {
       ID: 5,
-      pic:`${iphone}`,
+      pic: `${iphone}`,
       product: "LED Monitor",
       inventory: 31,
       price: "$510.00",
@@ -331,7 +331,7 @@ const data = {
     },
     {
       ID: 6,
-      pic:`${airpod}`,
+      pic: `${airpod}`,
       product: "Socks",
       inventory: 5,
       price: "$10.00",
@@ -339,7 +339,7 @@ const data = {
     },
     {
       ID: 7,
-      pic:`${perfume}`,
+      pic: `${perfume}`,
       product: "Mouse",
       inventory: 3,
       price: "$16.00",
@@ -347,7 +347,7 @@ const data = {
     },
     {
       ID: 8,
-      pic:`${iphone}`,
+      pic: `${iphone}`,
       product: "Mielle",
       inventory: 36,
       price: "$170.00",
@@ -355,7 +355,7 @@ const data = {
     },
     {
       ID: 9,
-      pic:`${airpod}`,
+      pic: `${airpod}`,
       product: "hat cap",
       inventory: 17,
       price: "$25.00",
@@ -363,7 +363,7 @@ const data = {
     },
     {
       ID: 10,
-      pic:`${perfume}`,
+      pic: `${perfume}`,
       product: "CeraVe",
       inventory: 7,
       price: "$220.00",
@@ -371,7 +371,7 @@ const data = {
     },
     {
       ID: 11,
-      pic:`${iphone}`,
+      pic: `${iphone}`,
       product: "Neutrogena",
       inventory: 30,
       price: "$205.00",
@@ -379,21 +379,21 @@ const data = {
     },
   ],
   coupons: {
-    head: ["discount", "percentDiscount", "expireDate","createdDate","status","actions"],
+    head: ["discount", "percentDiscount", "expireDate", "createdDate", "status", "actions"],
     body: [
       {
         discount: "tab20",
-        percent: 20,
-        expireDate: " ۲ خرداد ۱۴۰۰ ",
-        createdDate: "۲ اردیبهشت ۱۴۰۰ ",
+        percent: "20",
+        expireDate: "exd1",
+        createdDate: "crd1",
         status: "inactive",
       },
 
       {
         discount: "code10",
-        percent: 10,
-        expireDate: "۷ تیر ۱۴۰۱ ",
-        createdDate: "۷ خرداد ۱۴۰۱ ",
+        percent: "10",
+        expireDate: "exd2",
+        createdDate: "crd2",
         status: "inactive",
       },
     ],

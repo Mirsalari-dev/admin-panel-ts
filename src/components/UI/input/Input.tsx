@@ -4,12 +4,13 @@ import classes from "./Input.module.scss";
 
 interface Props {
   id: string;
+  disabled?:boolean;
   type: string;
   minLength?: number;
   maxLength?: number;
   placeholder?: string;
   classes?: string;
-  value?: string;
+  value?: any;
   ref?: HTMLInputElement;
   readonly?: boolean;
   autocomplete?: string;
@@ -45,6 +46,7 @@ const Input = React.forwardRef<IImperativeHandler, Props>((props, ref) => {
       <input
         ref={inputRef}
         id={props.id}
+        disabled={props.disabled}
         minLength={props.minLength}
         maxLength={props.maxLength}
         type={props.type}
