@@ -14,6 +14,7 @@ import type { Value } from "react-multi-date-picker"
 import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
 
+
 const EditCoupons: React.FC<{ coupons?: Props }> = (props) => {
   const { t } = useTranslation();
   const [dateCreated, setDateCreated] = useState<Value>(new Date())
@@ -55,6 +56,8 @@ const EditCoupons: React.FC<{ coupons?: Props }> = (props) => {
                   onChange={setDateCreated}
                   format="YYYY-MM-DD HH:mm:ss"
                 />
+                <Icon style={{ position: "absolute", right: "260px", top: "14px" }} icon="uil:calender" width="24" height="24" />
+
               </div>
               <div className={classes.form__control}>
                 <label>{t("expireDate")}</label>
@@ -66,6 +69,8 @@ const EditCoupons: React.FC<{ coupons?: Props }> = (props) => {
                   onChange={setDateExpire}
                   format="YYYY-MM-DD HH:mm:ss"
                 />
+                <Icon style={{ position: "absolute", right: "260px", top: "14px" }} icon="uil:calender" width="24" height="24" />
+
               </div>
               <div style={{ marginBottom: "20px", display: "flex" }}>
                 <h3 style={{ display: "inline" }}>{t("status")}</h3>
