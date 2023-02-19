@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../UI/card/Card";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -7,11 +7,18 @@ import classes from "./EditCoupons.module.scss";
 import { Icon } from "@iconify/react";
 import Button from "../../UI/button/Button";
 import Input from "../../UI/input/Input";
-import Badge from "../../UI/badge/Badge";
 import CheckBox from "../../UI/checkBox/CheckBox";
+
+import DatePicker, { DateObject } from "react-multi-date-picker"
+import type { Value } from "react-multi-date-picker"
+import persian from "react-date-object/calendars/persian"
+import persian_fa from "react-date-object/locales/persian_fa"
 
 const EditCoupons: React.FC<{ coupons?: Props }> = (props) => {
   const { t } = useTranslation();
+  const [dateCreated, setDateCreated] = useState<Value>(new Date())
+  const [dateExpire, setDateExpire] = useState<Value>(new Date())
+
   return (
     <div className={classes.edit__container}>
       <div className={classes.edit__right}>
@@ -38,18 +45,30 @@ const EditCoupons: React.FC<{ coupons?: Props }> = (props) => {
                 value={props.coupons?.percent}
               />
 
-              <Input
-                id="createdDate"
-                type="text"
-                value={t("crd1")}
-              />
-              <Input
-                id="expireDate"
-                type="time"
-                value={props.coupons?.expireDate}
-              />
-              <div style={{marginBottom:"20px",display:"flex"}}>
-                <h3 style={{display:"inline"}}>{t("status")}</h3>
+              <div className={classes.form__control}>
+                <label>{t("createdDate")}</label>
+                <DatePicker
+                  inputClass={classes.input}
+                  calendar={persian}
+                  locale={persian_fa}
+                  value={dateCreated}
+                  onChange={setDateCreated}
+                  format="YYYY-MM-DD HH:mm:ss"
+                />
+              </div>
+              <div className={classes.form__control}>
+                <label>{t("expireDate")}</label>
+                <DatePicker
+                  inputClass={classes.input}
+                  calendar={persian}
+                  locale={persian_fa}
+                  value={dateExpire}
+                  onChange={setDateExpire}
+                  format="YYYY-MM-DD HH:mm:ss"
+                />
+              </div>
+              <div style={{ marginBottom: "20px", display: "flex" }}>
+                <h3 style={{ display: "inline" }}>{t("status")}</h3>
                 <CheckBox />
               </div>
 
