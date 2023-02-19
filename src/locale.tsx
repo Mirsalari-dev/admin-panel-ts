@@ -165,7 +165,7 @@ i18n
           phoneNumber: "شماره تماس",
           email: "ایمیل",
           address: "آدرس",
-          upload: "بارگزاری",
+          upload: "بارگذاری",
           location: "موقعیت مکان",
           actions: "عملیات",
           deleteCustomer: "حذف مشتری",

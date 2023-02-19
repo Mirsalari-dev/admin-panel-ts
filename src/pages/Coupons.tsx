@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import CustomTable from "../components/tables/customTable/CustomTable";
 import Button from "../components/UI/button/Button";
 import data from "../mock/tables";
@@ -18,8 +19,8 @@ function Coupons() {
     <section>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <h2 className="title">{t("discount")}</h2>
-        <button style={{ width: "300px", border: "none", backgroundColor: "transparent", marginBottom: "25px" }}><Button>{t("createCoupon")}</Button>
-        </button>
+        <Link to="/discount/createCoupons" style={{ width: "300px", border: "none", backgroundColor: "transparent", margin:"0 -35px 25px -35px" }}><Button>{t("createCoupon")}</Button>
+        </Link>
       </div>
       {couponsTable}
     </section>
