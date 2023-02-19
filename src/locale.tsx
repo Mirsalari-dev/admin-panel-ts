@@ -107,7 +107,8 @@ i18n
           percentDiscount:"percent discount",
           expireDate:"expire date",
           createdDate	:"created Date",
-          editCoupons:"edit Coupons"
+          editCoupons:"edit Coupons",
+          createCoupon:"create Coupon"
         },
       },
       fa: {
@@ -210,6 +211,8 @@ i18n
           crd1:"۲ اردیبهشت ۱۴۰۰ ",
           exd2:"۷ تیر ۱۴۰۱ ",
           crd2:"۷ خرداد ۱۴۰۱ ",
+          createCoupon:"ایجاد کد تخفیف"
+
         },
       },
     },
