@@ -108,7 +108,11 @@ i18n
           expireDate:"expire date",
           createdDate	:"created Date",
           editCoupons:"edit Coupons",
-          createCoupon:"create Coupon"
+          createCoupon:"create Coupon",
+          comments:"comments",
+          notConfirmed:"not Confirmed",
+          Confirmed:"Confirmed"
+
         },
       },
       fa: {
@@ -211,7 +215,11 @@ i18n
           crd1:"۲ اردیبهشت ۱۴۰۰ ",
           exd2:"۷ تیر ۱۴۰۱ ",
           crd2:"۷ خرداد ۱۴۰۱ ",
-          createCoupon:"ایجاد کد تخفیف"
+          createCoupon:"ایجاد کد تخفیف",
+          comments:"کامنت ها",
+          notConfirmed:"تایید نشده",
+          Confirmed:"تایید شده"
+
 
         },
       },

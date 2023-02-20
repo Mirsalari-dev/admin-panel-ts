@@ -16,6 +16,7 @@ const Transactions = React.lazy(() => import("./pages/Transactions"));
 const Coupons = React.lazy(() => import("./pages/Coupons"));
 const CouponsEdit = React.lazy(() => import("./pages/CouponsEdit"));
 const CreateCoupons = React.lazy(() => import("./pages/CreateCoupons"));
+const Comments = React.lazy(() => import("./pages/Comments"));
 
 
 
@@ -47,6 +48,7 @@ function App() {
             <Route path="/discount" element={<Coupons />} />
             <Route path="/discount/:couponsCode" element={<CouponsEdit />} />
             <Route path="/discount/createCoupons" element={<CreateCoupons />} />
+            <Route path="/comments" element={<Comments />} />
 
           </Route>
           <Route path="*" element={<NotFound />} />
