@@ -111,7 +111,9 @@ i18n
           createCoupon:"create Coupon",
           comments:"comments",
           notConfirmed:"not Confirmed",
-          Confirmed:"Confirmed"
+          Confirmed:"Confirmed",
+          text:"comment text"
+
 
         },
       },
@@ -218,7 +220,8 @@ i18n
           createCoupon:"ایجاد کد تخفیف",
           comments:"کامنت ها",
           notConfirmed:"تایید نشده",
-          Confirmed:"تایید شده"
+          Confirmed:"تایید شده",
+          text:"متن کامنت"
 
 
         },

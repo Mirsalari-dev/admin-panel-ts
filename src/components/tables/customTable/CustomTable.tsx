@@ -75,7 +75,7 @@ const CustomTable: React.FC<Props> = (props) => {
           </td>
         </tr>
       );
-    }else if ("category" in item) {
+    } else if ("category" in item) {
       //for implementing products table
       return (
         <tr key={index}>
@@ -109,7 +109,7 @@ const CustomTable: React.FC<Props> = (props) => {
           </td>
         </tr>
       );
-    }else if ("percent" in item) {
+    } else if ("percent" in item) {
       //for implementing latest transactions
       return (
         <tr key={index}>
@@ -138,10 +138,11 @@ const CustomTable: React.FC<Props> = (props) => {
           </td>
         </tr>
       );
-    }else if ("text" in item) {
+    } else if ("text" in item) {
       //for implementing customers table
       return (
         <tr key={index}>
+          <td >{item.text}</td>
           <td className={classes.userName}>
             <img
               className={classes.avatar}
