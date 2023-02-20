@@ -28,6 +28,12 @@ const sidebarNav = [
     },]
   },
   {
+    link: "/comments",
+    section: "Comments",
+    icon: "ph:users-bold",
+    text: "Comments",
+  },
+  {
     link: "/customers",
     section: "customers",
     icon: "ph:users-bold",

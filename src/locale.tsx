@@ -113,7 +113,9 @@ i18n
           notConfirmed:"not Confirmed",
           Confirmed:"Confirmed",
           text:"comment text",
-          CommentEdit:"show Comment"
+          CommentEdit:"show Comment",
+          Comments:"Comments",
+
 
 
         },
@@ -137,6 +139,7 @@ i18n
           discount: "کد تخفیف",
           inventory: "موجودی انبار",
           CommentEdit:"نمایش کامنت",
+          Comments:"نظرات",
           logout: "خروج",
           active:"فعال",
           login: "ورود",
