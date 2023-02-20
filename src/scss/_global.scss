@@ -155,6 +155,14 @@ body {
   background-color: var(--approved-bgc);
   color: var(--approved-textColor);
 }
+.notConfirmed {
+  background-color: var(--rejected-bgc);
+  color: var(--rejected-textColor);
+}
+.Confirmed {
+  background-color: var(--approved-bgc);
+  color: var(--approved-textColor);
+}
 
 
 .ltr {
