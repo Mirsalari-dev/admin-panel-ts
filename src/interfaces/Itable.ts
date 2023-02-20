@@ -40,12 +40,22 @@ export type TCoupons = {
   status: string;
 };
 
+export interface IcommentsTable {
+  text: string;
+  userName: string;
+  avatar: string;
+  email: string;
+  phoneNumber: string;
+  status: string;
+}
+
 export type complex =
   | ItopCustomers
   | TlatestTransactions
   | IcustomersTable
   | IProductsTable
-  | TCoupons;
+  | TCoupons
+  | IcommentsTable;
 
 export interface Itable {
   limit?: number;
@@ -57,5 +67,6 @@ export interface Itable {
     | IcustomersTable
     | IProductsTable
     | TCoupons
+    | IcommentsTable
   )[];
 }
