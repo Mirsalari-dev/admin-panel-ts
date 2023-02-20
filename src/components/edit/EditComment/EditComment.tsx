@@ -45,6 +45,10 @@ const EditComment: React.FC<{ comment?: Props }> = (props) => {
                 type="text"
                 value={props.comment?.phoneNumber}
               />
+              <div>
+              <h3>{t("text")}</h3>
+              <textarea>{props.comment?.text}</textarea>
+              </div>
 
               <div style={{ marginBottom: "20px", display: "flex" }}>
                 <h3 style={{ display: "inline" }}>{t("status")}</h3>
