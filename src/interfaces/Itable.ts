@@ -41,6 +41,7 @@ export type TCoupons = {
 };
 
 export interface IcommentsTable {
+  ID: number | string;
   text: string;
   userName: string;
   avatar: string;

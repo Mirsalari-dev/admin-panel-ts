@@ -142,6 +142,7 @@ const CustomTable: React.FC<Props> = (props) => {
       //for implementing customers table
       return (
         <tr key={index}>
+          <td>{item.ID}</td>
           <td className={classes.text}><p>{item.text}</p></td>
           <td className={classes.userName}>
             <img
