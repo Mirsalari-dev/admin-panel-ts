@@ -73,7 +73,7 @@ function CreateCoupons() {
               </div>
               <div style={{ marginBottom: "20px", display: "flex" }}>
                 <h3 style={{ display: "inline" }}>{t("status")}</h3>
-                <CheckBox />
+                <CheckBox contentInActive="inactive" contentActive="active" />
               </div>
 
               <div className={classes.btn__wrapper}>

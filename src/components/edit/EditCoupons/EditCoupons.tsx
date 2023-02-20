@@ -74,7 +74,7 @@ const EditCoupons: React.FC<{ coupons?: Props }> = (props) => {
               </div>
               <div style={{ marginBottom: "20px", display: "flex" }}>
                 <h3 style={{ display: "inline" }}>{t("status")}</h3>
-                <CheckBox />
+                <CheckBox contentActive="active" contentInActive="inactive" />
               </div>
 
               <div className={classes.btn__wrapper}>
