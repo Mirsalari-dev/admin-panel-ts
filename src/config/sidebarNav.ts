@@ -13,24 +13,24 @@ const sidebarNav = [
     children:[{
       link: "/products",
       section: "products",
-      icon: "lucide:layout-dashboard",
+      icon: "mdi:shop-plus",
       text: "All Products",
     },{
       link: "/addproduct",
       section: "addproduct",
-      icon: "lucide:layout-dashboard",
+      icon: "material-symbols:add-box",
       text: "Add Product",
     },{
       link: "/discount",
       section: "discount",
-      icon: "lucide:layout-dashboard",
+      icon: "mdi:discount-box",
       text: "Create discount code",
     },]
   },
   {
     link: "/comments",
     section: "Comments",
-    icon: "ph:users-bold",
+    icon: "material-symbols:comment-outline-rounded",
     text: "Comments",
   },
   {
@@ -42,7 +42,7 @@ const sidebarNav = [
   {
     link: "/transactions",
     section: "transactions",
-    icon: "lucide:layout-dashboard",
+    icon: "mdi:account-cash",
     text: "transactions",
   },
 ];
