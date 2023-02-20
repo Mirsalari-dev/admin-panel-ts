@@ -47,10 +47,16 @@ tr:nth-child(odd) {
   background-color: var(--card-bgc);
 }
 
-th,
-td {
+th,td {
   padding: 0.8rem 1rem;
   white-space: nowrap;
+}
+
+td.text p {
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
 .userName,
