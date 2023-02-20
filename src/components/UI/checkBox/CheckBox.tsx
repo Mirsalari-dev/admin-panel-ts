@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import classes from "./CheckBox.module.scss"
 
+interface Props {
+  contentActive?: string
+  contentInActive?: string
 
-const CheckBox = () => {
+}
+
+
+const CheckBox: React.FC<Props> = (props) => {
   const [active, setActive] = useState(false)
 
   const { t } = useTranslation()
@@ -15,7 +21,8 @@ const CheckBox = () => {
             }`}
         ></div>
       </div>
-      <p>{`${active ? t("active") : t("inactive")}`}</p>
+      {/* <p>{`${active ? t(`${props.contentActive}`) : t(`${props.contentActive}`)}</p> */}
+      <p>{`${active ? t(`${props.contentActive}`) :t(`${props.contentInActive}`) }`}</p>
     </>
   );
 };

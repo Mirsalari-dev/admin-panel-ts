@@ -167,7 +167,7 @@ const CustomTable: React.FC<Props> = (props) => {
                 <Icon icon="fluent:delete-24-regular" width="24" />
               </div>
               <div className={classes.actions__edit}>
-                <Link to={`/customers/}`}>
+                <Link to={`/comments/${item.ID}`}>
                   <Icon icon="fluent:edit-16-regular" width="24" />
                 </Link>
               </div>
