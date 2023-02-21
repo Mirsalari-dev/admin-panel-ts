@@ -13,6 +13,8 @@ import CheckBox from "../../UI/checkBox/CheckBox";
 
 const EditComment: React.FC<{ comment?: Props }> = (props) => {
   const { t } = useTranslation();
+  const commentDate:any = props.comment?.date
+  const translateCommentDate:any = t(commentDate)
 
 
   return (
@@ -43,7 +45,8 @@ const EditComment: React.FC<{ comment?: Props }> = (props) => {
               <Input
                 id="date"
                 type="text"
-                value={props.comment?.date}
+                value={translateCommentDate}
+                disabled
               />
               <div>
               <h3>{t("text")}</h3>
