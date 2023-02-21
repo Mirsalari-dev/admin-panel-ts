@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import classes from "./Sidebar.module.scss";
 import { Icon } from "@iconify/react";
-import { useWindowSize } from 'usehooks-ts';
+import { useLocalStorage, useWindowSize } from 'usehooks-ts';
 import sidebarNav from '../../config/sidebarNav';
 import SidebarContext from '../../context/sidebarContext';
 import logo from "../../assets/images/logo.svg"
@@ -12,16 +12,17 @@ import LangContext from '../../context/langContext';
 
 
 const Sidebar = () => {
+
   const [showHandler, setShowHandler] = useState(false);
   const [accordionHeight, setAccordionHeight] = useState("0px");
   const [marginBottom, setMarginBottom] = useState("0px");
+  const location = useLocation()
 
   const { width } = useWindowSize();
   const sidebarCtx = useContext(SidebarContext);
   const { lang } = useContext(LangContext)
   const { t } = useTranslation()
   const contentRef = useRef<any>(null);
-
 
   function openSidebarHandler() {
     //for width>768(tablet size) if sidebar was open in width<768 was opened too.
@@ -52,6 +53,21 @@ const Sidebar = () => {
       setMarginBottom("0px")
     }
   }, [sidebarCtx.isOpen]);
+
+  useEffect(() => {
+    if (location.pathname === "/discount" || location.pathname === "/addproduct" || location.pathname === "/products") {
+      setShowHandler(true)
+      setAccordionHeight(
+        showHandler ? "0px" : `${contentRef.current.scrollHeight}px`
+      );
+      setMarginBottom(
+        showHandler ? "0px" : `${contentRef.current.scrollHeight}px`
+      );
+    }else{
+      setShowHandler(false)
+
+    }
+  }, []);
 
 
   return (
