@@ -46,7 +46,7 @@ export interface IcommentsTable {
   userName: string;
   avatar: string;
   email: string;
-  phoneNumber: string;
+  date: string;
   status: string;
 }
 

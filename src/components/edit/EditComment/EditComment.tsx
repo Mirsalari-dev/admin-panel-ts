@@ -41,9 +41,9 @@ const EditComment: React.FC<{ comment?: Props }> = (props) => {
                 value={props.comment?.email}
               />
               <Input
-                id="phoneNumber"
+                id="date"
                 type="text"
-                value={props.comment?.phoneNumber}
+                value={props.comment?.date}
               />
               <div>
               <h3>{t("text")}</h3>

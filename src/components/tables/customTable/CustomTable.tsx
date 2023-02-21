@@ -153,7 +153,7 @@ const CustomTable: React.FC<Props> = (props) => {
             {item.userName}
           </td>
           <td className="ltr">{item.email}</td>
-          <td className="ltr">{item.phoneNumber}</td>
+          <td>{t(item.date)}</td>
           <td>
             <Badge content={item.status} />
           </td>
