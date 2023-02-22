@@ -2,22 +2,20 @@ import React from 'react';
 import Multiselect from "multiselect-react-dropdown";
 import classes from "./SelectDropDown.module.scss";
 import data from '../../../mock/tables';
+import { useTranslation } from 'react-i18next';
 
 
 const SelectDropDown = () => {
 
+    const {t} = useTranslation()
+
     return (
-        <div className="App">
+        <div className={classes.container}>
         <Multiselect
           isObject={false}
-          onRemove={(event) => {
-            console.log(event);
-          }}
-          onSelect={(event) => {
-            console.log(event);
-          }}
           options={data.products.map(p=>p.product)}
-          showCheckbox
+          placeholder={t("selectProduct")}
+          emptyRecordMsg={t("emptyRecordMsg")}
         />
       </div>
     );

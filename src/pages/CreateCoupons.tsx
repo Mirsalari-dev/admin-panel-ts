@@ -79,7 +79,10 @@ function CreateCoupons() {
                 <h3 style={{ display: "inline" }}>{t("status")}</h3>
                 <CheckBox contentInActive="inactive" contentActive="active" />
               </div>
-              <SelectDropDown />
+              <div style={{ marginBottom: "20px" }}>
+                <h3>{t("selectProduct")}</h3>
+                <SelectDropDown />
+              </div>
               <div className={classes.btn__wrapper}>
                 <Link to="/discount">
                   <Button type="submit">{t("upload")}</Button>

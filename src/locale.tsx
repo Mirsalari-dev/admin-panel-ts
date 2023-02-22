@@ -115,7 +115,8 @@ i18n
           text:"comment text",
           CommentEdit:"show Comment",
           Comments:"Comments",
-
+          selectProduct:"select Product",
+          emptyRecordMsg:"No Options Available"
 
 
         },
@@ -135,6 +136,7 @@ i18n
           customers: "مشتریان",
           analytics: "آنالیزها",
           viewAllMessage:"مشاهده همه پیام ها",
+          selectProduct:"انتخاب بر حسب محصولات",
           inactive:"غیر فعال",
           discount: "کد تخفیف",
           inventory: "موجودی انبار",
@@ -163,6 +165,8 @@ i18n
           approved: "تأیید شده",
           milT:" (میلیون تومان)",
           pending: "در انتظار",
+          emptyRecordMsg:"محصولی برای انتخاب وجود ندارد",
+
           rejected: "رد شده",
           viewAll: "دیدن همه",
           search: "جستجو",
