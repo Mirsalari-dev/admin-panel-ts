@@ -13,7 +13,7 @@ function Editors() {
           height: 500,
           language: "fa",
           directionality: "rtl",
-         
+          branding: false,
         }}
       />
     </>

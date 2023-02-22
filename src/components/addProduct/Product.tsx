@@ -11,7 +11,9 @@ const Product = () => {
                 <label htmlFor="product-title" className={classes.title}>عنوان محصول</label>
                 <input id="product-title" type='text' className={classes.input_title} />
             </div>
-            <Editors />
+            <div>
+                <Editors />
+            </div>
         </div>
     );
 };
