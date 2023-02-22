@@ -55,7 +55,7 @@ const Sidebar = () => {
   }, [sidebarCtx.isOpen]);
 
   useEffect(() => {
-    if (location.pathname === "/discount" || location.pathname === "/addproduct" || location.pathname === "/products") {
+    if (location.pathname.includes("/discount") || location.pathname.includes("/products") || location.pathname.includes("/addproduct")) {
       setShowHandler(true)
       setAccordionHeight(
         showHandler ? "0px" : `${contentRef.current.scrollHeight}px`
