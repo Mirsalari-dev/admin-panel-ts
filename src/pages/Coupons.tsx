@@ -3,12 +3,15 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import CustomTable from "../components/tables/customTable/CustomTable";
 import Button from "../components/UI/button/Button";
+import useTitle from "../helper/useTitle";
 import data from "../mock/tables";
 
 
 
 function Coupons() {
   const { t } = useTranslation();
+  useTitle(t("discount"))
+
   let couponsTable = <CustomTable
     headData={data.coupons.head}
     bodyData={data.coupons.body}

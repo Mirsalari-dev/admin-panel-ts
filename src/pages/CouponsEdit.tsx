@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import EditCoupons from "../components/edit/EditCoupons/EditCoupons";
+import useTitle from "../helper/useTitle";
 import { TCoupons } from "../interfaces/Itable";
 import  data  from "../mock/tables"
 
@@ -14,7 +15,7 @@ function CouponsEdit() {
   let couponsInfo: TCoupons = data.coupons.body.filter(
     (item) => item.discount === couponsCode
   )[0];
-
+  useTitle(`${t("editCoupons")} ${couponsInfo.discount} `)
   let couponsEdit =<EditCoupons coupons={couponsInfo} />
 
 

@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import Button from "../components/UI/button/Button";
 import { useTranslation } from "react-i18next";
 import LangContext from "../context/langContext";
+import useTitle from "../helper/useTitle";
 
 function NotFound() {
   const { t } = useTranslation();
   const langCtx = useContext(LangContext);
+  useTitle(t("notFoundMsg"))
+
   return (
     <div
       className={`${

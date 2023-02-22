@@ -11,10 +11,13 @@ import CheckBox from "../components/UI/checkBox/CheckBox";
 import { Link } from "react-router-dom";
 import Button from "../components/UI/button/Button";
 import classes from "../components/edit/EditCoupons/EditCoupons.module.scss";
+import useTitle from "../helper/useTitle";
 
 
 function CreateCoupons() {
   const { t } = useTranslation();
+  useTitle(t("createCoupon"))
+
 
   const [dateCreated, setDateCreated] = useState<Value>(new Date())
   const [dateExpire, setDateExpire] = useState<Value>(new Date())
