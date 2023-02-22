@@ -13,6 +13,7 @@ import DatePicker, { DateObject } from "react-multi-date-picker"
 import type { Value } from "react-multi-date-picker"
 import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
+import SelectDropDown from "../../UI/selectDropDown/SelectDropDown";
 
 
 const EditCoupons: React.FC<{ coupons?: Props }> = (props) => {
@@ -76,6 +77,7 @@ const EditCoupons: React.FC<{ coupons?: Props }> = (props) => {
                 <h3 style={{ display: "inline" }}>{t("status")}</h3>
                 <CheckBox contentActive="active" contentInActive="inactive" />
               </div>
+              <SelectDropDown />
 
               <div className={classes.btn__wrapper}>
                 <Link to="/discount">

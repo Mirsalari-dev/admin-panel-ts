@@ -116,7 +116,8 @@ i18n
           CommentEdit:"show Comment",
           Comments:"Comments",
           selectProduct:"select Product",
-          emptyRecordMsg:"No Options Available"
+          emptyRecordMsg:"No Options Available",
+          selectCategory:"select Category"
 
 
         },
@@ -140,6 +141,7 @@ i18n
           inactive:"غیر فعال",
           discount: "کد تخفیف",
           inventory: "موجودی انبار",
+          selectCategory:"انتخاب بر حسب دسته بندی ها",
           CommentEdit:"نمایش کامنت",
           Comments:"نظرات",
           logout: "خروج",
