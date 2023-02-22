@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import Button from "../components/UI/button/Button";
 import classes from "../components/edit/EditCoupons/EditCoupons.module.scss";
 import useTitle from "../helper/useTitle";
+import SelectDropDown from "../components/UI/selectDropDown/SelectDropDown";
 
 
 function CreateCoupons() {
@@ -78,7 +79,7 @@ function CreateCoupons() {
                 <h3 style={{ display: "inline" }}>{t("status")}</h3>
                 <CheckBox contentInActive="inactive" contentActive="active" />
               </div>
-
+              <SelectDropDown />
               <div className={classes.btn__wrapper}>
                 <Link to="/discount">
                   <Button type="submit">{t("upload")}</Button>
