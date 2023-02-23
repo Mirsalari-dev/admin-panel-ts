@@ -10,7 +10,7 @@ function Editors() {
         apiKey="ep6m85zpj6qdbmi2jvqu5b202lazgnnexm42y0g3ehw8t42b"
         onInit={(evt, editor) => (editorRef.current = editor)}
         init={{
-          height: 500,
+          height: 400,
           language: "fa",
           directionality: "rtl",
           branding: false,
