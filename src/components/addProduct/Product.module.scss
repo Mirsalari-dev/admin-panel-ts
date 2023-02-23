@@ -3,20 +3,212 @@
 .title {
     font-size: large;
     font-weight: bold;
-
 }
 
 .input_title {
     width: 100%;
-    margin: 15px 0;
+    margin: 15px 0 30px 0;
     line-height: 1.5rem;
     padding: 0.5rem;
     border-width: 0.5px;
     border: none;
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 12px -7px rgba(0,0,0,0.5);
-    &:focus{
+    box-shadow: 0px 0px 12px -7px rgba(0, 0, 0, 0.5);
+
+    &:focus {
         outline: none;
         background-color: white;
     }
+}
+
+.productInfo {
+    display: flex;
+    justify-content: space-between;
+
+    &__rightSide {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    &__leftSide{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 20px;
+    }
+}
+
+.time {
+    font-size: 14px;
+    color: #2271b1;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form__control {
+    position: relative;
+    margin-bottom: 2rem;
+
+    // border: 1px solid red;
+    label {
+        position: absolute;
+        top: -30%;
+        left: 10px;
+        background-color: var(--bgc);
+        padding: 0.3rem;
+        white-space: nowrap;
+    }
+}
+
+.input {
+    padding: 1rem 1.5rem;
+    border: 1px solid gainsboro;
+    outline: gray;
+    // display: inline;
+    margin: 0 10px;
+    background-color: var(--bgc);
+    border-radius: $smallBorderRadius;
+    min-width: 300px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.05);
+
+    @media screen and (max-width: 300px) {
+        min-width: auto;
+    }
+}
+
+.datePicker {
+    display: flex;
+    justify-content: space-between;
+}
+
+$accentcolor: #fcae2c;
+$lightcolor: #fff;
+$darkcolor: #444;
+
+form {
+	width: 100%;
+	position: relative;
+	margin: 25px auto 0;
+	font-size: 15px;
+}
+.radiobtn {
+	position: relative;
+	display: block;
+	label {
+		display: block;
+		background: lighten($accentcolor, 30%);
+		color: $darkcolor;
+        margin: 0 20px;
+		border-radius: 5px;
+		padding: 10px 20px;
+		border: 2px solid lighten($accentcolor, 20%);
+		margin-bottom: 5px;
+		cursor: pointer;
+		&:after,
+		&:before {
+			content: "";
+			position: absolute;
+			right: 11px;
+			top: 11px;
+			width: 20px;
+			height: 20px;
+			border-radius: 3px;
+			background: lighten($accentcolor, 15%);
+		}
+		&:before {
+			background: transparent;
+			transition: 0.1s width cubic-bezier(0.075, 0.82, 0.165, 1) 0s,
+				0.3s height cubic-bezier(0.075, 0.82, 0.165, 2) 0.1s;
+			z-index: 2;
+			overflow: hidden;
+			background-repeat: no-repeat;
+			background-size: 13px;
+			background-position: center;
+			width: 0;
+			height: 0;
+			background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNS4zIDEzLjIiPiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE0LjcuOGwtLjQtLjRhMS43IDEuNyAwIDAgMC0yLjMuMUw1LjIgOC4yIDMgNi40YTEuNyAxLjcgMCAwIDAtMi4zLjFMLjQgN2ExLjcgMS43IDAgMCAwIC4xIDIuM2wzLjggMy41YTEuNyAxLjcgMCAwIDAgMi40LS4xTDE1IDMuMWExLjcgMS43IDAgMCAwLS4yLTIuM3oiIGRhdGEtbmFtZT0iUGZhZCA0Ii8+PC9zdmc+);
+		}
+	}
+	input[type="radio"] {
+		display: none;
+		position: absolute;
+		width: 100%;
+		appearance: none;
+		&:checked + label {
+			background: lighten($accentcolor, 15%);
+			animation-name: blink;
+			animation-duration: 1s;
+			border-color: $accentcolor;
+			&:after {
+				background: $accentcolor;
+			}
+			&:before {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+}
+
+@keyframes blink {
+	0% {
+		background-color: lighten($accentcolor, 15%);
+	}
+	10% {
+		background-color: lighten($accentcolor, 15%);
+	}
+	11% {
+		background-color: lighten($accentcolor, 20%);
+	}
+	29% {
+		background-color: lighten($accentcolor, 20%);
+	}
+	30% {
+		background-color: lighten($accentcolor, 15%);
+	}
+	50% {
+		background-color: lighten($accentcolor, 20%);
+	}
+	45% {
+		background-color: lighten($accentcolor, 15%);
+	}
+	50% {
+		background-color: lighten($accentcolor, 20%);
+	}
+	100% {
+		background-color: lighten($accentcolor, 15%);
+	}
+}
+
+.picture{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.375rem;
+    padding: 48px 30px 10px 30px;
+    margin:20px 0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+
+    &__icon{
+        margin: 0 auto;
+        opacity: 0.1;
+        border-bottom: #444 solid 1px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-bottom: 30px;
+    }
+	&__img{
+		justify-content: center;
+        align-items: center;
+        display: flex;
+		width: 256px;
+		
+	}
+}
+.multiselect{
+
+		margin:15px 0
+	
 }
