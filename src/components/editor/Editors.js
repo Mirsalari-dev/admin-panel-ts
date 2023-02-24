@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef,useContext } from "react";
 import { Editor } from "@tinymce/tinymce-react";
+import LangContext from "../../context/langContext";
 
 function Editors() {
   const editorRef = useRef(null);
+
+ const {lang} = useContext(LangContext)
 
   return (
     <>
@@ -11,8 +14,8 @@ function Editors() {
         onInit={(evt, editor) => (editorRef.current = editor)}
         init={{
           height: 400,
-          language: "fa",
-          directionality: "rtl",
+          language:`${lang ==="en" ? "en":"fa"}`, 
+          directionality: `${lang ==="en" ? "ltr":"rtl"}`,
           branding: false,
         }}
       />
