@@ -40,7 +40,18 @@ const Product = () => {
     return (
         <div>
             <div>
-                <label htmlFor="product-title" className={classes.title}>عنوان محصول</label>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <label htmlFor="product-title" className={classes.title}>عنوان محصول</label>
+                    <div>
+                        <Link style={{ width: "10px", border: "none", backgroundColor: "transparent", }} to="#">
+                            <Button outline cls>پیش نویس</Button>
+                        </Link>
+                        <Link style={{ width: "10px", border: "none", backgroundColor: "transparent", }} to="#">
+                            <Button cls>انتشار محصول</Button>
+                        </Link>
+                    </div>
+
+                </div>
                 <input id="product-title" type='text' className={classes.input_title} />
             </div>
             <div style={{ marginBottom: "20px" }}>
@@ -108,7 +119,7 @@ const Product = () => {
                         </div>
 
                     </form>
-                  
+
                     <div style={{ marginBottom: "25px", marginTop: "20px", display: "flex" }}>
                         <h3 style={{ display: "inline" }}>امکان بازگشت کالا</h3>
                         <CheckBox contentInActive="inactive" contentActive="active" />
@@ -131,9 +142,9 @@ const Product = () => {
 
                         </div>
                         <div style={{ display: "flex", justifyContent: "space-between" }}>
-                            <span style={{ fontSize: "14px", margin: "20px -10px 0 120px" }}>اندازه تصاویر زیر ۵۱۲*۵۱۲ نباشد</span>
-                            <Link style={{ width: "200px", border: "none", backgroundColor: "transparent", }} to="#">
-                                <Button onClick={handleUploadClick}>آپلود تصویر</Button>
+                            <span style={{ fontSize: "14px", margin: "20px -10px 0 120px", color: "black" }}>اندازه تصاویر زیر ۵۱۲*۵۱۲ نباشد</span>
+                            <Link style={{ width: "150px", border: "none", backgroundColor: "transparent", }} to="#">
+                                <Button outline cls onClick={handleUploadClick}>آپلود تصویر</Button>
                             </Link>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ interface Props {
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   outline?: boolean;
   children:React.ReactNode
+  cls?:boolean
 }
 
  
@@ -15,6 +16,8 @@ const Button: React.FC<Props> = (props) => {
     <button
       className={`${classes.btn} ${
         props.outline ? classes.outline : classes.button
+      } ${
+        props.cls && classes.cls
       } `}
       type={props.type || "button"}
       onClick={props.onClick}
