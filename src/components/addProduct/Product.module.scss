@@ -3,6 +3,8 @@
 .title {
 	font-size: large;
 	font-weight: bold;
+	color: var(--text-color);
+
 }
 
 .input_title {
@@ -14,10 +16,11 @@
 	border: none;
 	border-radius: 0.5rem;
 	box-shadow: 0px 0px 12px -7px rgba(0, 0, 0, 0.5);
+	background-color: var(--bgc);;
+
 
 	&:focus {
 		outline: none;
-		background-color: white;
 	}
 }
 
@@ -226,6 +229,8 @@ form {
 	flex-direction: column;
 	border-radius: 0.375rem;
 	padding: 48px 30px 10px 30px;
+	background-color: var(--bgc);;
+
 	margin: 20px 0;
 	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
@@ -238,6 +243,8 @@ form {
 		align-items: center;
 		display: flex;
 		margin-bottom: 30px;
+		background-color: var(--bgc);;
+		;
 	}
 
 	&__img {
@@ -255,7 +262,7 @@ form {
 		span {
 			font-size: 14px;
 			margin: 20px 0 0 0;
-			color: black;
+			color: var(--text-color);
 
 			@media screen and (max-width: 1060px) {
 				font-size: 12px;
