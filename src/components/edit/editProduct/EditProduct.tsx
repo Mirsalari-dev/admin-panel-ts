@@ -1,116 +1,171 @@
-import React from "react";
-import Card from "../../UI/card/Card";
+import React, { useState,useRef, ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { IProductsTable as Props } from "../../../interfaces/Itable";
 import classes from "./EditProduct.module.scss";
 import { Icon } from "@iconify/react";
 import Button from "../../UI/button/Button";
-import Input from "../../UI/input/Input";
-const EditProduct: React.FC<{ product?: Props }> = (props) => {
-  const { t } = useTranslation();
-  return (
-    <div className={classes.edit__container}>
-      <div className={classes.edit__left}>
-        <Card>
-          <div className={classes.img_wrapper}>
-            <img
-              className={classes.pic}
-              src={props.product?.pic}
-              alt="product pic"
-            />
-          </div>
-          <div className={classes.product__info}>
-            <div>
-              <div className={classes.title}>{t("proName")}</div>
-              <div className={classes.value}>
-                {t(`${props.product?.product}`)}
-              </div>
-            </div>
-            <div>
-              <div className={classes.title}>{t("category")}</div>
-              <div className={classes.value}>
-                {t(`${props.product?.category}`)}
-              </div>
-            </div>
-            <div>
-              <div className={classes.title}>{t("price")}</div>
-              <div className={classes.value}>
-                {t(`${props.product?.price}`)}
-              </div>
-            </div>
-            <div>
-              <div className={classes.title}>{t("inventoryCount")}</div>
-              <div className={classes.value}>
-                {t(`${props.product?.inventory}`)}
-              </div>
-            </div>
-          </div>
-        </Card>
-      </div>
+import CheckBox from "../../UI/checkBox/CheckBox";
+import Multiselect from "multiselect-react-dropdown";
+import DatePicker from "react-multi-date-picker";
+import persian from "react-date-object/calendars/persian"
+import persian_fa from "react-date-object/locales/persian_fa"
+import Editors from "../../editor/Editors";
 
-      <div className={classes.edit__right}>
-        <Card>
-          <div className={classes.product__edit}>
-            <h3 className={classes.subTitle}>
-              <Icon icon="fluent:edit-16-regular" width="24" />
-              {t("edit")}
-            </h3>
-            <div className={classes.img_wrapper}>
-              <div className={classes.upload_icon}>
-                <Icon icon="akar-icons:cloud-upload" />
-              </div>
-              <div className={classes.file_input_control}>
-                <input
-                  className={classes.file_input}
-                  type="file"
-                  id="pic"
-                  name="pic"
-                  accept="image/png, image/jpeg"
-                />
-              </div>
-              <img
-                className={classes.pic}
-                src={props.product?.pic}
-                alt="product pic"
+const EditProduct: React.FC<{ product?: Props }> = (props) => {
+  const { t } = useTranslation()
+  const [showTime, setShowTime] = useState(false)
+  const [showPrice, setShowPrice] = useState("")
+  const [file, setFile] = useState<File>();
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  console.log(window.innerWidth);
+
+
+  const handleUploadClick = () => {
+    // 👇 We redirect the click event onto the hidden input element
+    inputRef.current?.click();
+
+  };
+
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) {
+      return;
+    }
+
+    setFile(e.target.files[0]);
+
+    // 🚩 do the file upload here normally...
+  };
+
+  const optionList = ["digital", "clothing", "beauty"]
+
+  return (
+    <div>
+      <div>
+        <div className={classes.header}>
+          <label htmlFor="product-title" className={classes.title}>{t("Producttitle")}</label>
+          <div className={classes.buttons}>
+            <Link style={{ border: "none", backgroundColor: "transparent", }} to="#">
+              <Button outline cls>{t("draft")}</Button>
+            </Link>
+            <Link style={{ border: "none", backgroundColor: "transparent", }} to="#">
+              <Button cls>{t("Productrelease")}</Button>
+            </Link>
+          </div>
+
+        </div>
+        <input placeholder={t("EPT")} id="product-title" type='text' className={classes.input_title} value={props.product?.product} />
+      </div>
+      <div style={{ marginBottom: "20px" }}>
+        <Editors />
+      </div>
+      <div className={classes.productInfo}>
+        <div className={classes.productInfo__rightSide}>
+          <div>
+            <label htmlFor="id" className={classes.title}>{t("ProductID")}</label>
+            <input id="id" type='text' className={classes.input_title} value={props.product?.ID} />
+          </div>
+          <div>
+            <label htmlFor="inventory" className={classes.title}>{t("inventory")}</label>
+            <input placeholder={t("LeaveBlank")} id="inventory" type='number' className={classes.input_title} value={props.product?.inventory} />
+          </div>
+          <div>
+            <label htmlFor="price" className={classes.title}>{t("nProductP")}</label>
+            <input placeholder={t("enterToman")} id="price" className={classes.input_title} value={props.product?.price} />
+          </div>
+          <div>
+            <label htmlFor="priceDiscount" className={classes.title}>{t("GreatSellingPrice")}<a onClick={() => setShowTime(showTime => !showTime)} className={classes.time}>{t("Salestiming")}</a></label>
+            <input placeholder={t("enterToman")} id="priceDiscount" type='number' className={classes.input_title} />
+          </div>
+          <div>
+            {showTime &&
+              <>
+                <div style={{ marginBottom: "20px" }}>
+                  <label style={{ display: "block", marginBottom: "20px" }} className={classes.title}>{t("GreatSalepPriceDate")}</label>
+                  <div className={classes.datePicker}>
+                    <DatePicker
+                      inputClass={classes.input}
+                      calendar={persian}
+                      locale={persian_fa}
+                      placeholder={t("from")}
+                      format="YYYY-MM-DD HH:mm:ss"
+                    />
+                    <DatePicker
+                      inputClass={classes.input}
+                      calendar={persian}
+                      locale={persian_fa}
+                      placeholder={t("until")}
+                      format="YYYY-MM-DD HH:mm:ss"
+                    />
+                  </div>
+                </div>
+              </>
+            }
+          </div>
+          <label className={classes.title}>{t("Shippingsettings")}</label>
+          <form>
+            <div className={classes.radiobtn}>
+              <input type="radio" id="huey" onChange={(e) => setShowPrice(e.target.value)}
+                name="drone" value="huey" />
+              <label htmlFor="huey">{t("FreeShipping")}
+              </label>
+            </div>
+
+            <div className={classes.radiobtn}>
+              <input type="radio" id="dewey" onChange={(e) => setShowPrice(e.target.value)}
+                name="drone" value="dewey" />
+              <label htmlFor="dewey">{t("Fixedfare")}
+              </label>
+              {showPrice === "dewey" ? <input placeholder={t("enterToman")} type='number' className={classes.input_title} /> : ""
+              }
+            </div>
+
+          </form>
+
+          <div style={{ marginBottom: "25px", marginTop: "20px", display: "flex", justifyContent: "space-between" }}>
+            <h3 style={{ display: "inline", margin: "0 10px" }}>{t("returning")}</h3>
+            <div>
+              <CheckBox contentInActive="inactive" contentActive="active" />
+            </div>
+          </div>
+        </div>
+        <div className={classes.productInfo__leftSide}>
+          <label className={classes.title}>{t("Productimages")}</label>
+
+          <div className={classes.picture}>
+
+            <div>
+              <input
+                type="file"
+                ref={inputRef}
+                onChange={handleFileChange}
+                style={{ display: 'none' }}
+              />
+              {!props.product?.category ? <Icon className={classes.picture__icon} icon="icon-park-outline:add-picture" width="128" height="128" /> : <img className={classes.picture__img} src={props.product?.pic}/>
+              }
+
+            </div>
+            <div className={classes.picture__footer}>
+              <span>{t("minSize")}</span>
+              <Link to="#">
+                <Button outline cls onClick={handleUploadClick}>{t("upload")}</Button>
+              </Link>
+            </div>
+          </div>
+          <div>
+            <label className={classes.title}>{t("ProductCategory")}</label>
+            <div className={classes.multiselect}>
+              <Multiselect
+                isObject={false}
+                options={optionList}
+                placeholder={props.product?.category}
+                hidePlaceholder={true}
+                emptyRecordMsg={t("emptyRecordMsg")}
               />
             </div>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-            >
-              <Input
-                id="proName"
-                type="text"
-                placeholder={props.product?.product}
-              />
-              <Input
-                id="category"
-                type="text"
-                placeholder={props.product?.category}
-              />
-              <Input
-                id="price"
-                type="text"
-                placeholder={props.product?.price}
-              />
-              <Input
-                id="inventoryCount"
-                type="number"
-                placeholder={props.product?.inventory.toString()}
-              />
-              <div className={classes.btn__wrapper}>
-                <Link to="/products">
-                  <Button type="submit">{t("upload")}</Button>
-                </Link>
-                <Link to="/products">
-                  <Button outline={true}>{t("cancel")}</Button>
-                </Link>
-              </div>
-            </form>
           </div>
-        </Card>
+        </div>
       </div>
     </div>
   );
