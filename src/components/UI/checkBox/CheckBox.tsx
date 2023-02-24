@@ -14,7 +14,7 @@ const CheckBox: React.FC<Props> = (props) => {
 
   const { t } = useTranslation()
   return (
-    <>
+    <div style={{display:"flex",}}>
       <div className={classes.themeBox} onClick={() => setActive(active => !active)}>
         <div
           className={`${classes.toggle} ${active ? classes.darkMode : ""
@@ -23,7 +23,7 @@ const CheckBox: React.FC<Props> = (props) => {
       </div>
       {/* <p>{`${active ? t(`${props.contentActive}`) : t(`${props.contentActive}`)}</p> */}
       <p>{`${active ? t(`${props.contentActive}`) :t(`${props.contentInActive}`) }`}</p>
-    </>
+    </div>
   );
 };
 

@@ -7,13 +7,13 @@
     border-radius: 30px;
     padding: 1px;
     position: relative;
-    margin: 0 2rem;
+    margin: 0 1rem;
     display: inline-block;
     cursor: pointer;
 
-    @include mobile {
-        margin: 0;
-    }
+    // @include mobile {
+    //     margin: 0;
+    // }
 }
 
 .toggle {

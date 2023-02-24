@@ -9,7 +9,6 @@ import persian_fa from "react-date-object/locales/persian_fa"
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 import Button from '../UI/button/Button';
-import SelectDropDown from '../UI/selectDropDown/SelectDropDown';
 import Multiselect from 'multiselect-react-dropdown';
 
 const Product = () => {
@@ -18,6 +17,9 @@ const Product = () => {
     const [showPrice, setShowPrice] = useState("")
     const [file, setFile] = useState<File>();
     const inputRef = useRef<HTMLInputElement | null>(null);
+
+    console.log(window.innerWidth);
+    
 
     const handleUploadClick = () => {
         // 👇 We redirect the click event onto the hidden input element
@@ -40,19 +42,19 @@ const Product = () => {
     return (
         <div>
             <div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div className={classes.header}>
                     <label htmlFor="product-title" className={classes.title}>عنوان محصول</label>
-                    <div>
-                        <Link style={{ width: "10px", border: "none", backgroundColor: "transparent", }} to="#">
+                    <div className={classes.buttons}>
+                        <Link style={{ border: "none", backgroundColor: "transparent", }} to="#">
                             <Button outline cls>پیش نویس</Button>
                         </Link>
-                        <Link style={{ width: "10px", border: "none", backgroundColor: "transparent", }} to="#">
+                        <Link style={{ border: "none", backgroundColor: "transparent", }} to="#">
                             <Button cls>انتشار محصول</Button>
                         </Link>
                     </div>
 
                 </div>
-                <input id="product-title" type='text' className={classes.input_title} />
+                <input placeholder="عنوان محصول خود را وارد کنید" id="product-title" type='text' className={classes.input_title} />
             </div>
             <div style={{ marginBottom: "20px" }}>
                 <Editors />
@@ -65,7 +67,7 @@ const Product = () => {
                     </div>
                     <div>
                         <label htmlFor="inventory" className={classes.title}>موجودی انبار</label>
-                        <input placeholder="در صورت عدم موجودی، این فیلد را خالی بگذارید" id="inventory" type='number' className={classes.input_title} />
+                        <input placeholder="در صورت عدم موجودی، خالی بگذارید" id="inventory" type='number' className={classes.input_title} />
                     </div>
                     <div>
                         <label htmlFor="price" className={classes.title}>قیمت عادی محصول</label>
@@ -120,9 +122,11 @@ const Product = () => {
 
                     </form>
 
-                    <div style={{ marginBottom: "25px", marginTop: "20px", display: "flex" }}>
-                        <h3 style={{ display: "inline" }}>امکان بازگشت کالا</h3>
+                    <div style={{ marginBottom: "25px", marginTop: "20px", display: "flex",justifyContent:"space-between" }}>
+                        <h3 style={{ display: "inline",margin:"0 10px" }}>امکان بازگشت کالا</h3>
+                        <div>
                         <CheckBox contentInActive="inactive" contentActive="active" />
+                        </div>
                     </div>
                 </div>
                 <div className={classes.productInfo__leftSide}>
@@ -141,9 +145,9 @@ const Product = () => {
                             }
 
                         </div>
-                        <div style={{ display: "flex", justifyContent: "space-between" }}>
-                            <span style={{ fontSize: "14px", margin: "20px -10px 0 120px", color: "black" }}>اندازه تصاویر زیر ۵۱۲*۵۱۲ نباشد</span>
-                            <Link style={{ width: "150px", border: "none", backgroundColor: "transparent", }} to="#">
+                        <div className={classes.picture__footer}>
+                            <span>حداقل اندازه ۵۱۲*۵۱۲</span>
+                            <Link to="#">
                                 <Button outline cls onClick={handleUploadClick}>آپلود تصویر</Button>
                             </Link>
                         </div>
