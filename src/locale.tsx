@@ -135,7 +135,9 @@ i18n
           Shippingsettings:"Shipping settings",
           returning:"The possibility of returning goods",
           Productimages:"Product images",
-          minSize:"Min Size : 512 * 512"
+          minSize:"Min Size : 512 * 512",
+          Fixedfare:"Fixed fare",
+          FreeShipping:"Free shipping"
 
         },
       },
@@ -187,6 +189,7 @@ i18n
           customer: "مشتری",
           totalSpending: "کل خرج‌کرد",
           totalOrders: "کل سفارشات",
+          FreeShipping:"حمل و نقل رایگان",
           orderID: "ID سفارش",
           shop:"فروشگاه",
           totalPrice: "هزینه کل",
@@ -267,8 +270,8 @@ i18n
           Producttitle:"عنوان محصول",
           EPT:"عنوان محصول خود را وارد کنید",
           ProductID:"شناسه کالا",
-          GreatSalepPriceDate:"تاریخ قیمت فروش فوق‌العاده"
-
+          GreatSalepPriceDate:"تاریخ قیمت فروش فوق‌العاده",
+          Fixedfare:"کرایه ثابت"
 
         },
       },

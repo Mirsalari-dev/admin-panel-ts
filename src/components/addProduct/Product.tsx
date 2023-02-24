@@ -107,16 +107,16 @@ const Product = () => {
                         <div className={classes.radiobtn}>
                             <input type="radio" id="huey" onChange={(e) => setShowPrice(e.target.value)}
                                 name="drone" value="huey" />
-                            <label htmlFor="huey">حمل و نقل رایگان
+                            <label htmlFor="huey">{t("FreeShipping")}
                             </label>
                         </div>
 
                         <div className={classes.radiobtn}>
                             <input type="radio" id="dewey" onChange={(e) => setShowPrice(e.target.value)}
                                 name="drone" value="dewey" />
-                            <label htmlFor="dewey">کرایه ثابت
+                            <label htmlFor="dewey">{t("Fixedfare")}
                             </label>
-                            {showPrice === "dewey" ? <input placeholder="بر حسب تومان وارد کنید" type='number' className={classes.input_title} /> : ""
+                            {showPrice === "dewey" ? <input placeholder={t("enterToman")} type='number' className={classes.input_title} /> : ""
                             }
                         </div>
 
