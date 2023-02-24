@@ -19,7 +19,7 @@ const Product = () => {
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     console.log(window.innerWidth);
-    
+
 
     const handleUploadClick = () => {
         // 👇 We redirect the click event onto the hidden input element
@@ -43,18 +43,18 @@ const Product = () => {
         <div>
             <div>
                 <div className={classes.header}>
-                    <label htmlFor="product-title" className={classes.title}>عنوان محصول</label>
+                    <label htmlFor="product-title" className={classes.title}>{t("Producttitle")}</label>
                     <div className={classes.buttons}>
                         <Link style={{ border: "none", backgroundColor: "transparent", }} to="#">
-                            <Button outline cls>پیش نویس</Button>
+                            <Button outline cls>{t("draft")}</Button>
                         </Link>
                         <Link style={{ border: "none", backgroundColor: "transparent", }} to="#">
-                            <Button cls>انتشار محصول</Button>
+                            <Button cls>{t("Productrelease")}</Button>
                         </Link>
                     </div>
 
                 </div>
-                <input placeholder="عنوان محصول خود را وارد کنید" id="product-title" type='text' className={classes.input_title} />
+                <input placeholder={t("EPT")} id="product-title" type='text' className={classes.input_title} />
             </div>
             <div style={{ marginBottom: "20px" }}>
                 <Editors />
@@ -62,39 +62,39 @@ const Product = () => {
             <div className={classes.productInfo}>
                 <div className={classes.productInfo__rightSide}>
                     <div>
-                        <label htmlFor="id" className={classes.title}>شناسه کالا</label>
+                        <label htmlFor="id" className={classes.title}>{t("ProductID")}</label>
                         <input id="id" type='text' className={classes.input_title} />
                     </div>
                     <div>
-                        <label htmlFor="inventory" className={classes.title}>موجودی انبار</label>
-                        <input placeholder="در صورت عدم موجودی، خالی بگذارید" id="inventory" type='number' className={classes.input_title} />
+                        <label htmlFor="inventory" className={classes.title}>{t("inventory")}</label>
+                        <input placeholder={t("LeaveBlank")} id="inventory" type='number' className={classes.input_title} />
                     </div>
                     <div>
-                        <label htmlFor="price" className={classes.title}>قیمت عادی محصول</label>
-                        <input placeholder="بر حسب تومان وارد کنید" id="price" type='number' className={classes.input_title} />
+                        <label htmlFor="price" className={classes.title}>{t("nProductP")}</label>
+                        <input placeholder={t("enterToman")} id="price" type='number' className={classes.input_title} />
                     </div>
                     <div>
-                        <label htmlFor="priceDiscount" className={classes.title}>قیمت فروش فوق العاده محصول <a onClick={() => setShowTime(showTime => !showTime)} className={classes.time}>زمان بندی فروش</a></label>
-                        <input placeholder="بر حسب تومان وارد کنید" id="priceDiscount" type='number' className={classes.input_title} />
+                        <label htmlFor="priceDiscount" className={classes.title}>{t("GreatSellingPrice")}<a onClick={() => setShowTime(showTime => !showTime)} className={classes.time}>{t("Salestiming")}</a></label>
+                        <input placeholder={t("enterToman")} id="priceDiscount" type='number' className={classes.input_title} />
                     </div>
                     <div>
                         {showTime &&
                             <>
                                 <div style={{ marginBottom: "20px" }}>
-                                    <label style={{ display: "block", marginBottom: "20px" }} className={classes.title}>تاریخ قیمت فروش فوق‌العاده</label>
+                                    <label style={{ display: "block", marginBottom: "20px" }} className={classes.title}>{t("GreatSalepPriceDate")}</label>
                                     <div className={classes.datePicker}>
                                         <DatePicker
                                             inputClass={classes.input}
                                             calendar={persian}
                                             locale={persian_fa}
-                                            placeholder="از تاریخ"
+                                            placeholder={t("from")}
                                             format="YYYY-MM-DD HH:mm:ss"
                                         />
                                         <DatePicker
                                             inputClass={classes.input}
                                             calendar={persian}
                                             locale={persian_fa}
-                                            placeholder="تا تاریخ"
+                                            placeholder={t("until")}
                                             format="YYYY-MM-DD HH:mm:ss"
                                         />
                                     </div>
@@ -102,7 +102,7 @@ const Product = () => {
                             </>
                         }
                     </div>
-                    <label className={classes.title}>تنظیمات حمل و نقل</label>
+                    <label className={classes.title}>{t("Shippingsettings")}</label>
                     <form>
                         <div className={classes.radiobtn}>
                             <input type="radio" id="huey" onChange={(e) => setShowPrice(e.target.value)}
@@ -122,15 +122,15 @@ const Product = () => {
 
                     </form>
 
-                    <div style={{ marginBottom: "25px", marginTop: "20px", display: "flex",justifyContent:"space-between" }}>
-                        <h3 style={{ display: "inline",margin:"0 10px" }}>امکان بازگشت کالا</h3>
+                    <div style={{ marginBottom: "25px", marginTop: "20px", display: "flex", justifyContent: "space-between" }}>
+                        <h3 style={{ display: "inline", margin: "0 10px" }}>{t("returning")}</h3>
                         <div>
-                        <CheckBox contentInActive="inactive" contentActive="active" />
+                            <CheckBox contentInActive="inactive" contentActive="active" />
                         </div>
                     </div>
                 </div>
                 <div className={classes.productInfo__leftSide}>
-                    <label className={classes.title}>تصاویر کالا</label>
+                    <label className={classes.title}>{t("Productimages")}</label>
 
                     <div className={classes.picture}>
 
@@ -146,14 +146,14 @@ const Product = () => {
 
                         </div>
                         <div className={classes.picture__footer}>
-                            <span>حداقل اندازه ۵۱۲*۵۱۲</span>
+                            <span>{t("minSize")}</span>
                             <Link to="#">
-                                <Button outline cls onClick={handleUploadClick}>آپلود تصویر</Button>
+                                <Button outline cls onClick={handleUploadClick}>{t("upload")}</Button>
                             </Link>
                         </div>
                     </div>
                     <div>
-                        <label className={classes.title}>دسته بندی محصول</label>
+                        <label className={classes.title}>{t("ProductCategory")}</label>
                         <div className={classes.multiselect}>
                             <Multiselect
                                 isObject={false}
