@@ -1,28 +1,37 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import CustomTable from "../components/tables/customTable/CustomTable";
 import Button from "../components/UI/button/Button";
 import useTitle from "../helper/useTitle";
 import data from "../mock/tables";
-
+import SearchContext from "../context/searchTerm";
+import searchTerm from "../helper/searchTerm";
 
 
 function Coupons() {
   const { t } = useTranslation();
   useTitle(t("discount"))
 
+  const { search } = useContext(SearchContext)
+  const [filtered, setFiltered] = useState<any>([]);
+
+  useEffect(() => {
+    setFiltered(searchTerm(data.coupons.body, search))
+  }, [search])
+
   let couponsTable = <CustomTable
     headData={data.coupons.head}
-    bodyData={data.coupons.body}
+    bodyData={filtered}
     limit={10}
+    key={filtered}
   />
 
   return (
     <section>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <h2 className="title">{t("discount")}</h2>
-        <Link to="/discount/createCoupons" style={{ width: "300px", border: "none", backgroundColor: "transparent", margin:"0 -35px 25px -35px" }}><Button>{t("createCoupon")}</Button>
+        <Link to="/discount/createCoupons" style={{ width: "300px", border: "none", backgroundColor: "transparent", margin: "0 -35px 25px -35px" }}><Button>{t("createCoupon")}</Button>
         </Link>
       </div>
       {couponsTable}
