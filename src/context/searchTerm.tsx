@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 interface searchContextObj {
   search: string | null;
-  setSearch: React.Dispatch<React.SetStateAction<null>>
+  setSearch: React.Dispatch<React.SetStateAction<string>>
 };
 interface Props {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ const SearchContext = React.createContext<searchContextObj>({
 });
 
 export const SearchContextProvider: React.FC<Props> = (props) => {
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState("");
 
   const searchValue: searchContextObj = {
     search,
