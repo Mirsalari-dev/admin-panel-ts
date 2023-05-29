@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 interface searchContextObj {
-  search: string | null;
+  search: string ;
   setSearch: React.Dispatch<React.SetStateAction<string>>
 };
 interface Props {
