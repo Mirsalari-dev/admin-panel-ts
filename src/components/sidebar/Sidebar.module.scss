@@ -32,23 +32,23 @@
   }
 
   &__logo {
-    // @include flex();
-    // width: $sideBarLogoHeight;
-    text-align: center;
-    padding: 0 12px 2rem;
+    margin: 25px auto 70px;
 
     img {
-      --size: 7.5rem;
-      width: var(--size);
-      height: var(--size);
+      width: 150px;
+      height: 25px;
+      
     }
 
     @include tablet {
       padding-top: 1rem;
+      margin-left: 60%
+
     }
 
     @include mobile {
       padding-top: 0.5rem;
+      margin-left: 60%
     }
   }
 
@@ -150,7 +150,6 @@ html[dir="rtl"] {
       }
     }
   }
-
 }
 
 .iconfa {
@@ -161,9 +160,8 @@ html[dir="rtl"] {
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: var(--primaryColor)
+    color: var(--primaryColor);
   }
-
 }
 
 .iconen {
@@ -174,9 +172,8 @@ html[dir="rtl"] {
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: var(--primaryColor)
+    color: var(--primaryColor);
   }
-
 }
 
 .icon__mobilefa {
@@ -187,7 +184,7 @@ html[dir="rtl"] {
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: var(--primaryColor)
+    color: var(--primaryColor);
   }
 }
 
@@ -203,7 +200,7 @@ html[dir="rtl"] {
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: var(--primaryColor)
+    color: var(--primaryColor);
   }
 }
 
