@@ -19,8 +19,11 @@ const discountSlice = createSlice({
         (discount) => discount.ID != action.payload
       );
     },
+    addDiscount: (state, action: PayloadAction<any>) => {
+      state.discount.push(action.payload);
+    },
   },
 });
 
 export default discountSlice.reducer;
-export const { removeDiscount } = discountSlice.actions;
+export const { removeDiscount,addDiscount } = discountSlice.actions;
