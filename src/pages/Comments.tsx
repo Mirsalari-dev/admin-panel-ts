@@ -5,6 +5,7 @@ import SearchContext from "../context/searchTerm";
 import searchTerm from "../helper/searchTerm";
 import useTitle from "../helper/useTitle";
 import data from "../mock/tables";
+import { useAppSelector } from "../redux/hooks";
 
 
 
@@ -14,9 +15,11 @@ function Comments() {
   const { search } = useContext(SearchContext)
   const [filtered, setFiltered] = useState<any>([]);
 
+  const comments = useAppSelector(state => state.comments.comments)
+
   useEffect(() => {
-    setFiltered(searchTerm(data.comments, search))
-  }, [search])
+    setFiltered(searchTerm(comments, search))
+  }, [search,comments])
 
   let commentsTables = <CustomTable key={filtered} limit={10} headData={data.commentsHeader} bodyData={filtered} />
 
