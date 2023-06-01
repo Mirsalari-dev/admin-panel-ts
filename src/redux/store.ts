@@ -2,6 +2,8 @@ import { combineReducers } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import customersReducer from "./customersSlice"
+import commentsReducer from "./commentsSlice"
+
 import {
   persistStore,
   persistReducer,
@@ -14,7 +16,8 @@ import {
 } from "redux-persist";
 
 const reducers = combineReducers({
-  customers : customersReducer
+  customers : customersReducer,
+  comments : commentsReducer
 });
 
 const persistConfig = {
