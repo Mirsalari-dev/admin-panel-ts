@@ -402,7 +402,7 @@ const data = {
         percent: "20",
         expireDate: "exd1",
         createdDate: "crd1",
-        status: "inactive",
+        status: "notConfirmed",
       },
 
       {
@@ -411,7 +411,7 @@ const data = {
         percent: "10",
         expireDate: "exd2",
         createdDate: "crd2",
-        status: "inactive",
+        status: "notConfirmed",
       },
     ],
   },
