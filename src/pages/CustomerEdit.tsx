@@ -4,21 +4,22 @@ import { useParams } from "react-router-dom";
 import EditCustomer from "../components/edit/editCustomer/EditCustomer";
 import useTitle from "../helper/useTitle";
 import { IcustomersTable } from "../interfaces/Itable";
-import  data  from "../mock/tables"
+import { useAppSelector } from "../redux/hooks";
 
 function CustomerEdit() {
   const { t } = useTranslation();
   const params = useParams();
   let { customerId } = params;
 
+  const customers = useAppSelector((state) => state.customers.customers);
+
   /* fallback in case of time limit to test firebase database will over */
-  let customerInfo: IcustomersTable = data.customers.filter(
-    (item) => item.ID.toString() === customerId
+  let customerInfo: IcustomersTable = customers.filter(
+    (item) => item.ID?.toString() === customerId
   )[0];
-  useTitle(`${t("editCustomer")} ${customerInfo.userName} `)
+  useTitle(`${t("editCustomer")} ${customerInfo.userName} `);
 
-  let customerEdit =<EditCustomer customer={customerInfo} />
-
+  let customerEdit = <EditCustomer customer={customerInfo} />;
 
   return (
     <section>
