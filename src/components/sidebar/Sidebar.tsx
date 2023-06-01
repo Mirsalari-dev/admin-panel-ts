@@ -22,7 +22,6 @@ const Sidebar = () => {
   const { lang } = useContext(LangContext);
   const { t } = useTranslation();
   const contentRef = useRef<any>(null);
-  console.log(fav);
 
   function openSidebarHandler() {
     //for width>768(tablet size) if sidebar was open in width<768 was opened too.
