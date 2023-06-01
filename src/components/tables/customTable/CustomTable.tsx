@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Itable as Props, complex } from "../../../interfaces/Itable";
 import Card from "../../UI/card/Card";
 import { useTranslation } from "react-i18next";
@@ -7,10 +7,15 @@ import Badge from "../../UI/badge/Badge";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import Modal from "../../UI/modal/Modal";
+import { removeCustomer } from "../../../redux/customersSlice";
+import { useAppDispatch } from "../../../redux/hooks";
 
 const CustomTable: React.FC<Props> = (props) => {
+  const dispatch = useAppDispatch();
 
   const [showModal, setShowModal] = useState(false);
+  const [id, setID] = useState<any>();
+
   function showModalHandler() {
     setShowModal((prev) => !prev);
   }
@@ -42,38 +47,46 @@ const CustomTable: React.FC<Props> = (props) => {
     } else if ("email" && "totalOrders" in item) {
       //for implementing customers table
       return (
-        <tr key={index}>
-          <td>{item.ID}</td>
-          <td className={classes.userName}>
-            <img
-              className={classes.avatar}
-              src={item.avatar}
-              alt="user avatar"
-            />
-            {item.userName}
-          </td>
-          <td className="ltr">{item.email}</td>
-          <td className="ltr">{item.phoneNumber}</td>
-          <td>{item.totalOrders}</td>
-          <td>{item.totalSpend}</td>
-          <td>{item.location}</td>
-          <td className={classes.actions}>
-            <Icon icon="charm:menu-kebab" />
-            <div className={classes.actions__box}>
-              <div
-                className={classes.actions__delete}
-                onClick={showModalHandler}
-              >
-                <Icon icon="fluent:delete-24-regular" width="24" />
+        <>
+          <tr key={index}>
+            <td>{item.ID}</td>
+            <td className={classes.userName}>
+              <img
+                className={classes.avatar}
+                src={item.avatar}
+                alt="user avatar"
+              />
+              {item.userName}
+            </td>
+            <td className="ltr">{item.email}</td>
+            <td className="ltr">{item.phoneNumber}</td>
+            <td>{item.totalOrders}</td>
+            <td>{item.totalSpend}</td>
+            <td>{item.location}</td>
+            <td className={classes.actions}>
+              <Icon icon="charm:menu-kebab" />
+              <div className={classes.actions__box}>
+                <div
+                  className={classes.actions__delete}
+                  onClick={() => {
+                    setShowModal(true);
+                    setID(item.ID);
+                  }}
+                >
+                  <Icon
+                    icon="fluent:delete-24-regular"
+                    width="24"
+                  />
+                </div>
+                <div className={classes.actions__edit}>
+                  <Link to={`/customers/${item.ID}`}>
+                    <Icon icon="fluent:edit-16-regular" width="24" />
+                  </Link>
+                </div>
               </div>
-              <div className={classes.actions__edit}>
-                <Link to={`/customers/${item.ID}`}>
-                  <Icon icon="fluent:edit-16-regular" width="24" />
-                </Link>
-              </div>
-            </div>
-          </td>
-        </tr>
+            </td>
+          </tr>
+        </>
       );
     } else if ("category" in item) {
       //for implementing products table
@@ -143,7 +156,9 @@ const CustomTable: React.FC<Props> = (props) => {
       return (
         <tr key={index}>
           <td>{item.ID}</td>
-          <td className={classes.text}><p>{item.text}</p></td>
+          <td className={classes.text}>
+            <p>{item.text}</p>
+          </td>
           <td className={classes.userName}>
             <img
               className={classes.avatar}
@@ -184,6 +199,7 @@ const CustomTable: React.FC<Props> = (props) => {
   };
 
   const [dataShow, setDataShow] = useState(initDataShow);
+
   // const [selectedCategory, setSelectedCategory] = useState(
   //   props.selectedCategory
   // );
@@ -215,19 +231,28 @@ const CustomTable: React.FC<Props> = (props) => {
     setCurrPage(page);
   };
 
-  const { t } = useTranslation();
+  useEffect(() => {
+    const start = Number(props.limit) * currPage;
+    const end = start + Number(props.limit);
 
+    setDataShow(props.bodyData?.slice(start, end));
+  }, [props.limit, currPage]);
+
+  const { t } = useTranslation();
 
   return (
     <>
-      {showModal ? (
+      {showModal && (
         <Modal
-          title={t("deleteCustomer")}
+          title={t("delete")}
           message={`${t("modalMessage")}`}
-          onConfirm={showModalHandler}
+          onCancel={showModalHandler}
+          onConfirm={() => {
+            dispatch(removeCustomer(id));
+            showModalHandler();
+          }}
         />
-      ) : null}
-
+      )}
       <div className={classes.container}>
         <Card>
           <div className={classes.wrapper}>
@@ -255,8 +280,9 @@ const CustomTable: React.FC<Props> = (props) => {
                 {range.map((item, index) => (
                   <div
                     key={index}
-                    className={`${classes.table__pagination_item} ${currPage === index ? classes.active : ""
-                      }`}
+                    className={`${classes.table__pagination_item} ${
+                      currPage === index ? classes.active : ""
+                    }`}
                     onClick={() => selectPage(index)}
                   >
                     {item + 1}
