@@ -5,19 +5,33 @@ import { useTranslation } from "react-i18next";
 import classes from "./CustomTable.module.scss";
 import Badge from "../../UI/badge/Badge";
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Modal from "../../UI/modal/Modal";
 import { removeCustomer } from "../../../redux/customersSlice";
 import { useAppDispatch } from "../../../redux/hooks";
+import { removeComments } from "../../../redux/commentsSlice";
 
 const CustomTable: React.FC<Props> = (props) => {
   const dispatch = useAppDispatch();
+  const router = useLocation()
+  
 
   const [showModal, setShowModal] = useState(false);
   const [id, setID] = useState<any>();
 
   function showModalHandler() {
     setShowModal((prev) => !prev);
+  }
+
+  function modalConfirmHandler(id:any) {
+
+    if(router.pathname === "/comments"){
+      dispatch(removeComments(id));
+    }
+    if(router.pathname ==="/customers"){
+      dispatch(removeCustomer(id));
+    }
+    setShowModal(false);
   }
 
   function tableBody(item: complex, index: number) {
@@ -73,10 +87,7 @@ const CustomTable: React.FC<Props> = (props) => {
                     setID(item.ID);
                   }}
                 >
-                  <Icon
-                    icon="fluent:delete-24-regular"
-                    width="24"
-                  />
+                  <Icon icon="fluent:delete-24-regular" width="24" />
                 </div>
                 <div className={classes.actions__edit}>
                   <Link to={`/customers/${item.ID}`}>
@@ -177,7 +188,10 @@ const CustomTable: React.FC<Props> = (props) => {
             <div className={classes.actions__box}>
               <div
                 className={classes.actions__delete}
-                onClick={showModalHandler}
+                onClick={() => {
+                  setShowModal(true);
+                  setID(item.ID);
+                }}
               >
                 <Icon icon="fluent:delete-24-regular" width="24" />
               </div>
@@ -239,8 +253,6 @@ const CustomTable: React.FC<Props> = (props) => {
   // }, [props.limit, currPage]);
 
   const { t } = useTranslation();
-  console.log(dataShow);
-  
 
   return (
     <>
@@ -249,10 +261,7 @@ const CustomTable: React.FC<Props> = (props) => {
           title={t("delete")}
           message={`${t("modalMessage")}`}
           onCancel={showModalHandler}
-          onConfirm={() => {
-            dispatch(removeCustomer(id));
-            showModalHandler();
-          }}
+          onConfirm={() => modalConfirmHandler(id)}
         />
       )}
       <div className={classes.container}>
