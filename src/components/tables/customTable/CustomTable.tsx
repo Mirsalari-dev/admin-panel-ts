@@ -10,6 +10,7 @@ import Modal from "../../UI/modal/Modal";
 import { removeCustomer } from "../../../redux/customersSlice";
 import { useAppDispatch } from "../../../redux/hooks";
 import { removeComments } from "../../../redux/commentsSlice";
+import { removeDiscount } from "../../../redux/discountSlice";
 
 const CustomTable: React.FC<Props> = (props) => {
   const dispatch = useAppDispatch();
@@ -30,6 +31,9 @@ const CustomTable: React.FC<Props> = (props) => {
     }
     if(router.pathname ==="/customers"){
       dispatch(removeCustomer(id));
+    }
+    if(router.pathname ==="/discount"){
+      dispatch(removeDiscount(id));
     }
     setShowModal(false);
   }
@@ -149,7 +153,10 @@ const CustomTable: React.FC<Props> = (props) => {
             <div className={classes.actions__box}>
               <div
                 className={classes.actions__delete}
-                onClick={showModalHandler}
+                onClick={() => {
+                  setShowModal(true);
+                  setID(item.ID);
+                }}
               >
                 <Icon icon="fluent:delete-24-regular" width="24" />
               </div>

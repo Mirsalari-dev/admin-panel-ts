@@ -7,6 +7,7 @@ import useTitle from "../helper/useTitle";
 import data from "../mock/tables";
 import SearchContext from "../context/searchTerm";
 import searchTerm from "../helper/searchTerm";
+import { useAppSelector } from "../redux/hooks";
 
 
 function Coupons() {
@@ -16,9 +17,12 @@ function Coupons() {
   const { search } = useContext(SearchContext)
   const [filtered, setFiltered] = useState<any>([]);
 
+  const discount = useAppSelector((state) => state.discounts.discount);
+
+
   useEffect(() => {
-    setFiltered(searchTerm(data.coupons.body, search))
-  }, [search])
+    setFiltered(searchTerm(discount, search))
+  }, [search,discount])
 
   let couponsTable = <CustomTable
     headData={data.coupons.head}
