@@ -1,8 +1,9 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
-import customersReducer from "./customersSlice"
-import commentsReducer from "./commentsSlice"
+import customersReducer from "./customersSlice";
+import commentsReducer from "./commentsSlice";
+import discountReducer from "./discountSlice";
 
 import {
   persistStore,
@@ -16,8 +17,9 @@ import {
 } from "redux-persist";
 
 const reducers = combineReducers({
-  customers : customersReducer,
-  comments : commentsReducer
+  customers: customersReducer,
+  comments: commentsReducer,
+  discounts: discountReducer,
 });
 
 const persistConfig = {
@@ -39,6 +41,6 @@ export const store = configureStore({
 export let persistor = persistStore(store);
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;
