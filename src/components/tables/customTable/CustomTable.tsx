@@ -231,14 +231,16 @@ const CustomTable: React.FC<Props> = (props) => {
     setCurrPage(page);
   };
 
-  useEffect(() => {
-    const start = Number(props.limit) * currPage;
-    const end = start + Number(props.limit);
+  // useEffect(() => {
+  //   const start = Number(props.limit) * currPage;
+  //   const end = start + Number(props.limit);
 
-    setDataShow(props.bodyData?.slice(start, end));
-  }, [props.limit, currPage]);
+  //   setDataShow(props.bodyData?.slice(start, end));
+  // }, [props.limit, currPage]);
 
   const { t } = useTranslation();
+  console.log(dataShow);
+  
 
   return (
     <>
