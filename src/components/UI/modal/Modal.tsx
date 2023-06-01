@@ -6,10 +6,10 @@ import Card from "../card/Card";
 import Button from "../button/Button";
 
 interface IBackdrop {
-  onConfirm: () => void;
+  onCancel: () => void;
 }
 const Backdrop: React.FC<IBackdrop> = (props) => {
-  return <div className={classes.backdrop} onClick={props.onConfirm}></div>;
+  return <div className={classes.backdrop} onClick={props.onCancel}></div>;
 };
 
 // interface IModalOverlay {
@@ -20,11 +20,13 @@ const Backdrop: React.FC<IBackdrop> = (props) => {
 interface IModal {
   title: string;
   message: string;
-  onConfirm: () => void;
+  onCancel: () => void;
+  onConfirm: any;
 }
 
 const ModalOverlay: React.FC<IModal> = (props) => {
   const { t } = useTranslation();
+  
 
   return (
     <Card>
@@ -36,7 +38,7 @@ const ModalOverlay: React.FC<IModal> = (props) => {
           <p>{props.message}</p>
         </div>
         <footer className={classes.actions}>
-          <Button outline={true} onClick={props.onConfirm}>
+          <Button outline={true} onClick={props.onCancel}>
             {t("cancel")}
           </Button>
           <button className={classes.delete} onClick={props.onConfirm}>
@@ -54,13 +56,14 @@ const Modal: React.FC<IModal> = (props) => {
   return (
     <>
       {ReactDom.createPortal(
-        <Backdrop onConfirm={props.onConfirm} />,
+        <Backdrop onCancel={props.onCancel} />,
         backdropRoot
       )}
       {ReactDom.createPortal(
         <ModalOverlay
           title={props.title}
           message={props.message}
+          onCancel={props.onCancel}
           onConfirm={props.onConfirm}
         />,
         modalOverlay
