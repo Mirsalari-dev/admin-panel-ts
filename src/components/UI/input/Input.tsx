@@ -14,6 +14,7 @@ interface Props {
   ref?: HTMLInputElement;
   readonly?: boolean;
   autocomplete?: string;
+  onChange?:any
 }
 
 interface IImperativeHandler {
@@ -51,9 +52,9 @@ const Input = React.forwardRef<IImperativeHandler, Props>((props, ref) => {
         maxLength={props.maxLength}
         type={props.type}
         placeholder={props.placeholder}
-        value={value}
+        value={props.value}
         readOnly={props.readonly || false}
-        onChange={inputChangeHandler}
+        onChange={props.onChange}
         autoComplete={props.autocomplete || "off"}
       />
     </div>
