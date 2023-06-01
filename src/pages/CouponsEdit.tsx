@@ -5,14 +5,17 @@ import EditCoupons from "../components/edit/EditCoupons/EditCoupons";
 import useTitle from "../helper/useTitle";
 import { TCoupons } from "../interfaces/Itable";
 import  data  from "../mock/tables"
+import { useAppSelector } from "../redux/hooks";
 
 function CouponsEdit() {
   const { t } = useTranslation();
   const params = useParams();
   let { couponsCode } = params;
 
+  const coupons = useAppSelector((state) => state.discounts.discount);
+
   /* fallback in case of time limit to test firebase database will over */
-  let couponsInfo: TCoupons = data.coupons.body.filter(
+  let couponsInfo: TCoupons = coupons.filter(
     (item) => item.discount === couponsCode
   )[0];
   useTitle(`${t("editCoupons")} ${couponsInfo.discount} `)
