@@ -33,7 +33,8 @@ export interface IProductsTable {
 }
 
 export type TCoupons = {
-  discount:  string;
+  ID: number | string;
+  discount: string;
   percent: string;
   expireDate: string;
   createdDate: string;

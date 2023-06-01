@@ -1,7 +1,7 @@
-import avt from "../assets/images/avt.jpg"
-import iphone from "../assets/images/iphone.png"
-import airpod from "../assets/images/airpod.png"
-import perfume from "../assets/images/perfume.png"
+import avt from "../assets/images/avt.jpg";
+import iphone from "../assets/images/iphone.png";
+import airpod from "../assets/images/airpod.png";
+import perfume from "../assets/images/perfume.png";
 
 const data = {
   topCustomers: {
@@ -50,67 +50,78 @@ const data = {
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "approved",
-      }, {
+      },
+      {
         orderId: "#OD1311",
         customer: "Reza asadi",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "rejected",
-      }, {
+      },
+      {
         orderId: "#OD1651",
         customer: "Hoda Rezaei",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "approved",
-      }, {
+      },
+      {
         orderId: "#OD1781",
         customer: "Kazem karami",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "pending",
-      }, {
+      },
+      {
         orderId: "#OC3711",
         customer: "Negin salari",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "rejected",
-      }, {
+      },
+      {
         orderId: "#OD1651",
         customer: "Hamid Hamedi",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "approved",
-      }, {
+      },
+      {
         orderId: "#OD1333",
         customer: "Kiarash saadi",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "pending",
-      }, {
+      },
+      {
         orderId: "#OD4851",
         customer: "Sahar soulati",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "rejected",
-      }, {
+      },
+      {
         orderId: "#OD1873",
         customer: "Maryam molavi",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "approved",
-      }, {
+      },
+      {
         orderId: "#OD1551",
         customer: "Meysam rohani",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "pending",
-      }, {
+      },
+      {
         orderId: "#OD3871",
         customer: "Parisa Savari",
         totalPrice: "$900",
         date: "17 Jun 2022",
         status: "rejected",
-      }, {
+      },
+      {
         orderId: "#OD1111",
         customer: "Ali mohammadi",
         totalPrice: "$900",
@@ -170,8 +181,7 @@ const data = {
     },
     {
       ID: 1,
-      avatar:
-        "https://i.pravatar.cc/60?img=69",
+      avatar: "https://i.pravatar.cc/60?img=69",
       userName: "John Smith",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -191,8 +201,7 @@ const data = {
     },
     {
       ID: 3,
-      avatar:
-        "https://i.pravatar.cc/60?img=61",
+      avatar: "https://i.pravatar.cc/60?img=61",
       userName: "	Maximilian Doe",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -212,8 +221,7 @@ const data = {
     },
     {
       ID: 5,
-      avatar:
-        "https://i.pravatar.cc/60?img=22",
+      avatar: "https://i.pravatar.cc/60?img=22",
       userName: "John Smith",
       email: "john_smith@gmail.com",
       phoneNumber: "+98 918 123 45 67",
@@ -379,9 +387,17 @@ const data = {
     },
   ],
   coupons: {
-    head: ["discount", "percentDiscount", "expireDate", "createdDate", "status", "actions"],
+    head: [
+      "discount",
+      "percentDiscount",
+      "expireDate",
+      "createdDate",
+      "status",
+      "actions",
+    ],
     body: [
       {
+        ID: 0,
         discount: "tab20",
         percent: "20",
         expireDate: "exd1",
@@ -390,6 +406,7 @@ const data = {
       },
 
       {
+        ID: 1,
         discount: "code10",
         percent: "10",
         expireDate: "exd2",
