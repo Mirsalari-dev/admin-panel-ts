@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../UI/card/Card";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import classes from "./EditCustomer.module.scss";
 import { IcustomersTable } from "../../../interfaces/Itable";
 import { Icon } from "@iconify/react";
 import Button from "../../UI/button/Button";
 import Input from "../../UI/input/Input";
+import { useAppDispatch } from "../../../redux/hooks";
+import { updateCustomer } from "../../../redux/customersSlice";
 
 const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
+  const [userInfoUpldate, setUserInfoUpldate] = useState({
+    id: props.customer?.ID,
+    userName: props.customer?.userName,
+    location: props.customer?.location,
+    email: props.customer?.email,
+    phoneNumber: props.customer?.phoneNumber,
+    avatar: props.customer?.avatar,
+  });
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+
+  const router = useNavigate();
+
+  const onChangeHandler = (e: any) => {
+    setUserInfoUpldate({ ...userInfoUpldate, [e.target.id]: e.target.value });
+  };
   return (
     <div className={classes.edit__container}>
       <div className={classes.edit__left}>
@@ -66,6 +83,7 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
                   id="avatar"
                   name="avatar"
                   accept="image/png, image/jpeg"
+                  disabled
                 />
               </div>
               <img
@@ -83,6 +101,7 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
                 id="userName"
                 type="text"
                 placeholder={props.customer?.userName}
+                onChange={onChangeHandler}
               />
               <Input
                 id="phoneNumber"
@@ -90,22 +109,30 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
                 minLength={7}
                 maxLength={12}
                 placeholder={props.customer?.phoneNumber}
+                onChange={onChangeHandler}
               />
               <Input
                 id="email"
                 type="email"
                 placeholder={props.customer?.email}
+                onChange={onChangeHandler}
               />
               <Input
-                id="address"
+                id="location"
                 type="text"
-                minLength={10}
                 placeholder={props.customer?.location}
+                onChange={onChangeHandler}
               />
               <div className={classes.btn__wrapper}>
-                <Link to="/customers">
-                  <Button type="submit">{t("upload")}</Button>
-                </Link>
+                <Button
+                  onClick={() => {
+                    dispatch(updateCustomer(userInfoUpldate));
+                    router("/customers");
+                  }}
+                  type="submit"
+                >
+                  {t("upload")}
+                </Button>
                 <Link to="/customers">
                   <Button outline={true}>{t("cancel")}</Button>
                 </Link>
