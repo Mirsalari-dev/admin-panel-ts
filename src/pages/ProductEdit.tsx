@@ -5,6 +5,7 @@ import EditProduct from "../components/edit/editProduct/EditProduct";
 import useTitle from "../helper/useTitle";
 import { IProductsTable } from "../interfaces/Itable";
 import data from "../mock/tables";
+import { useAppSelector } from "../redux/hooks";
 
 function ProductEdit() {
   const { t } = useTranslation();
@@ -12,14 +13,14 @@ function ProductEdit() {
   const params = useParams();
   let { productId } = params;
 
-  let productInfo: IProductsTable = data.products.filter(
+  const products = useAppSelector((state) => state.products.products);
+
+  let productInfo: IProductsTable = products.filter(
     (item) => item.ID.toString() === productId
   )[0];
-  useTitle(`${t("editProduct")} ${productInfo.product} `)
+  useTitle(`${t("editProduct")} ${productInfo.product} `);
 
-  let productEdit = <EditProduct product={productInfo} />
-
-
+  let productEdit = <EditProduct product={productInfo} />;
 
   return (
     <section>
