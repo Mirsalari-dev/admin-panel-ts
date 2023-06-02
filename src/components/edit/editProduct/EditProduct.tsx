@@ -89,6 +89,7 @@ const EditProduct: React.FC<{ product?: Props }> = (props) => {
                 router("/products");
               }}
               type="submit"
+              cls
             >
               {t("upload")}
             </Button>
@@ -116,7 +117,8 @@ const EditProduct: React.FC<{ product?: Props }> = (props) => {
               id="id"
               type="text"
               className={classes.input_title}
-              value={props.product?.ID}
+              value={productInfoUpldate.id}
+              onChange={onChangeHandler}
             />
           </div>
           <div>
