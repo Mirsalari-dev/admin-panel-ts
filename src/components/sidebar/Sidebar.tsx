@@ -82,7 +82,7 @@ const Sidebar = () => {
             src={fav}
           />
         ) : (
-          lang=="fa" ? <img src={logoE} /> : <img style={{marginLeft:"-200px"}} src={logoE} />
+          lang=="fa" ? <img src={logoE} /> :  lang=="en" && width <= 768 ? <img style={{marginLeft:"-200px"}} src={logoE}/> : <img src={logoE} />
 
           // <img src={logoE} />
         )}
@@ -142,8 +142,8 @@ const Sidebar = () => {
                       : `${classes.sidebar__menu__item}`
                   }
                   style={{
-                    marginRight: "30px",
-                    marginLeft: "30px",
+                    marginRight: "8px",
+                    marginLeft: "15px",
                     maxHeight: `${accordionHeight}`,
                     marginBottom: `${marginBottom}`,
                   }}
