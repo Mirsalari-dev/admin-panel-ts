@@ -5,27 +5,29 @@ import useTitle from "../helper/useTitle";
 import data from "../mock/tables";
 import SearchContext from "../context/searchTerm";
 import searchTerm from "../helper/searchTerm";
-
+import { useAppSelector } from "../redux/hooks";
 
 function Products() {
   const { t } = useTranslation();
-  useTitle(t("products"))
+  useTitle(t("products"));
 
-  const { search } = useContext(SearchContext)
+  const { search } = useContext(SearchContext);
   const [filtered, setFiltered] = useState<any>([]);
 
+  const products = useAppSelector((state) => state.products.products);
+
   useEffect(() => {
-    setFiltered(searchTerm(data.products, search))
-  }, [search])
+    setFiltered(searchTerm(products, search));
+  }, [search, products]);
 
-
-
-  let productsTable = <CustomTable
-    headData={data.productsHeader}
-    bodyData={filtered}
-    limit={10}
-    key={filtered}
-  />
+  let productsTable = (
+    <CustomTable
+      headData={data.productsHeader}
+      bodyData={filtered}
+      limit={10}
+      key={filtered}
+    />
+  );
 
   return (
     <section>
