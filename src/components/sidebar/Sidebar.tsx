@@ -82,7 +82,9 @@ const Sidebar = () => {
             src={fav}
           />
         ) : (
-          <img src={logoE} />
+          lang=="fa" ? <img src={logoE} /> : <img style={{marginLeft:"-200px"}} src={logoE} />
+
+          // <img src={logoE} />
         )}
       </div>
       <div className={classes.sidebar__menu}>
