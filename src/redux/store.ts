@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 import customersReducer from "./customersSlice";
 import commentsReducer from "./commentsSlice";
 import discountReducer from "./discountSlice";
+import productsReducer from "./productsSlice";
 
 import {
   persistStore,
@@ -20,6 +21,7 @@ const reducers = combineReducers({
   customers: customersReducer,
   comments: commentsReducer,
   discounts: discountReducer,
+  products: productsReducer,
 });
 
 const persistConfig = {
