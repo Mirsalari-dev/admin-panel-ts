@@ -46,16 +46,19 @@
         visibility: hidden;
         opacity: 0;
         top: 160%;
-        width: 300px;
+        width: 270px;
         height: auto;
-
+        margin-right: -100px;
+        margin-left: -100px;
         border-radius: 10px;
+        border: 1px solid;
 
         &__show {
             top: 120%;
             user-select: auto;
             visibility: visible;
             opacity: 1;
+            
         }
 
         &__allpm {
