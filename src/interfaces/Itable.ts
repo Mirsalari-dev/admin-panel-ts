@@ -25,7 +25,7 @@ export interface IcustomersTable {
 
 export interface IProductsTable {
   ID: number | string;
-  pic: string;
+  pic: any
   product: string;
   inventory: number;
   price: string;
