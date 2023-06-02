@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import classes from "./Sidebar.module.scss";
 import { Icon } from "@iconify/react";
 import { useLocalStorage, useWindowSize } from "usehooks-ts";
@@ -22,6 +22,7 @@ const Sidebar = () => {
   const { lang } = useContext(LangContext);
   const { t } = useTranslation();
   const contentRef = useRef<any>(null);
+  const router = useNavigate()
 
   function openSidebarHandler() {
     //for width>768(tablet size) if sidebar was open in width<768 was opened too.
@@ -75,7 +76,7 @@ const Sidebar = () => {
         !sidebarCtx.isOpen && classes.sidebar_close
       }`}
     >
-      <div className={classes.sidebar__logo}>
+      <div onClick={()=>router("/")} className={classes.sidebar__logo}>
         {!sidebarCtx.isOpen && width > 768 ? (
           <img
             style={{ width: "33px", height: "22px", marginLeft: "12px" }}
