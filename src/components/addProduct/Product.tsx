@@ -7,18 +7,27 @@ import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../UI/button/Button";
 import Multiselect from "multiselect-react-dropdown";
+import { useAppDispatch } from "../../redux/hooks";
+import { addProduct } from "../../redux/productsSlice";
 
 const Product = () => {
   const { t } = useTranslation();
   const [showTime, setShowTime] = useState(false);
   const [showPrice, setShowPrice] = useState("");
-  const [file, setFile] = useState<File>();
   const inputRef = useRef<HTMLInputElement | null>(null);
-
-  console.log(window.innerWidth);
+  const dispatch = useAppDispatch();
+  const router = useNavigate();
+  const [product, setProduct] = useState<any>({
+    ID: Math.floor(Math.random() * 100),
+    category: "",
+    price: "",
+    inventory: 0,
+    product: "",
+    pic: "",
+  });
 
   const handleUploadClick = () => {
     // 👇 We redirect the click event onto the hidden input element
@@ -30,12 +39,29 @@ const Product = () => {
       return;
     }
 
-    setFile(e.target.files[0]);
+    setProduct({
+      ...product,
+      pic: e.target.files[0],
+    });
 
     // 🚩 do the file upload here normally...
   };
 
   const optionList = ["digital", "clothing", "beauty"];
+
+  const handleSelect = (selectedList: any) => {
+    setProduct({
+      ...product,
+      category: selectedList.map((optionList: any) => optionList),
+    });
+  };
+
+  const onChangeHandler = (e: any) => {
+    setProduct({
+      ...product,
+      [e.target.id]: e.target.value,
+    });
+  };
 
   return (
     <div>
@@ -53,19 +79,26 @@ const Product = () => {
                 {t("draft")}
               </Button>
             </Link>
-            <Link
-              style={{ border: "none", backgroundColor: "transparent" }}
-              to="#"
-            >
-              <Button cls>{t("Productrelease")}</Button>
-            </Link>
+      
+              <Button
+                onClick={() => {
+                  dispatch(addProduct(product));
+                  router("/products");
+                }}
+                type="submit"
+                cls
+              >
+                {t("Productrelease")}
+              </Button>
           </div>
         </div>
         <input
           placeholder={t("EPT")}
-          id="product-title"
+          id="product"
           type="text"
           className={classes.input_title}
+          value={product.product}
+          onChange={onChangeHandler}
         />
       </div>
       <div style={{ marginBottom: "20px" }}>
@@ -77,7 +110,8 @@ const Product = () => {
             <label htmlFor="id" className={classes.title}>
               {t("ProductID")}
             </label>
-            <input id="id" type="text" className={classes.input_title} />
+            <input id="id" type="text" value={product.id}
+              onChange={onChangeHandler} className={classes.input_title} />
           </div>
           <div>
             <label htmlFor="inventory" className={classes.title}>
@@ -88,6 +122,8 @@ const Product = () => {
               id="inventory"
               type="number"
               className={classes.input_title}
+              value={product.inventory}
+              onChange={onChangeHandler}
             />
           </div>
           <div>
@@ -99,6 +135,8 @@ const Product = () => {
               id="price"
               type="number"
               className={classes.input_title}
+              value={product.price}
+              onChange={onChangeHandler}
             />
           </div>
           <div>
@@ -209,7 +247,7 @@ const Product = () => {
                 onChange={handleFileChange}
                 style={{ display: "none" }}
               />
-              {!file ? (
+              {!product.pic ? (
                 <Icon
                   className={classes.picture__icon}
                   icon="icon-park-outline:add-picture"
@@ -217,7 +255,10 @@ const Product = () => {
                   height="128"
                 />
               ) : (
-                <img className={classes.picture__img} src={URL.createObjectURL(file)} />
+                <img
+                  className={classes.picture__img}
+                  src={URL.createObjectURL(product.pic)}
+                />
               )}
             </div>
             <div className={classes.picture__footer}>
@@ -237,6 +278,7 @@ const Product = () => {
                 options={optionList}
                 placeholder=""
                 emptyRecordMsg={t("emptyRecordMsg")}
+                onSelect={handleSelect}
               />
             </div>
           </div>

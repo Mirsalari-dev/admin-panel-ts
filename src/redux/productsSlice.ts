@@ -41,8 +41,11 @@ const productsSlice = createSlice({
         products: updated,
       };
     },
+    addProduct: (state, action: PayloadAction<any>) => {
+      state.products.push(action.payload);
+    },
   },
 });
 
 export default productsSlice.reducer;
-export const { removeProduct,updateProduct } = productsSlice.actions;
+export const { removeProduct,updateProduct,addProduct } = productsSlice.actions;
