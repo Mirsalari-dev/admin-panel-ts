@@ -21,16 +21,15 @@ function CreateCoupons() {
   useTitle(t("createCoupon"));
   const dispatch = useAppDispatch();
   const router = useNavigate();
-  const options:any = {
-    calendar: 'persian',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
+  const options: any = {
+    calendar: "persian",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   };
-  const [dateCreated, setDateCreated] = useState<Value>(new Intl.DateTimeFormat('fa-IR', options).format(new Date()));
-  const [dateExpire, setDateExpire] = useState<Value>(new Intl.DateTimeFormat('fa-IR', options).format(new Date()));
+  const [dateCreated, setDateCreated] = useState<any>();
+  const [dateExpire, setDateExpire] = useState<any>();
   const [active, setActive] = useState("");
-  
 
   const [coupon, setCoupon] = useState({
     ID: Math.floor(Math.random() * 100),
@@ -48,8 +47,15 @@ function CreateCoupons() {
     });
   };
   useEffect(() => {
-    setCoupon({ ...coupon, status: active });
-  }, [active]);
+    setCoupon({
+      ...coupon,
+      status: active,
+      createdDate: new Intl.DateTimeFormat("fa-IR", options).format(
+        dateCreated
+      ),
+      expireDate: new Intl.DateTimeFormat("fa-IR", options).format(dateExpire),
+    });
+  }, [active, dateExpire, dateCreated]);
 
   return (
     <section>
@@ -126,15 +132,15 @@ function CreateCoupons() {
                 <div style={{ marginBottom: "20px", display: "flex" }}>
                   <h3 style={{ display: "inline" }}>{t("status")}</h3>
                   <CheckBox
-                  contentActive="Confirmed"
-                  contentInActive="notConfirmed"
-                  onClick={() => {
-                    setActive(
-                      active == "Confirmed" ? "notConfirmed" : "Confirmed"
-                    );
-                  }}
-                  active={active}
-                />
+                    contentActive="Confirmed"
+                    contentInActive="notConfirmed"
+                    onClick={() => {
+                      setActive(
+                        active == "Confirmed" ? "notConfirmed" : "Confirmed"
+                      );
+                    }}
+                    active={active}
+                  />
                 </div>
                 <SelectDropDown />
                 <div className={classes.btn__wrapper}>
