@@ -13,8 +13,10 @@
   top: 0;
   transition: all 0.5s ease-in-out;
   z-index: 200;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
+  // margin-left: 20px !important;
+  // padding: 30px;
 
   &.sidebar_close {
     width: 50px;
@@ -149,6 +151,10 @@ html[dir="rtl"] {
         direction: rtl;
         width: auto;
       }
+      @include mobile {
+        margin-right: 20px;
+
+      }
     }
   }
 }
@@ -180,7 +186,7 @@ html[dir="rtl"] {
 
 .icon__mobilefa {
   position: absolute;
-  right: 150px;
+  right: 175px;
   margin-top: 50px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;

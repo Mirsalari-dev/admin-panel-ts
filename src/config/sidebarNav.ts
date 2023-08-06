@@ -7,26 +7,23 @@ const sidebarNav = [
   },
   {
     link: "/products",
-    section: "shop",
-    icon: "icon-park-outline:ad-product",
-    text: "Shop",
-    children:[{
-      link: "/products",
-      section: "products",
-      icon: "mdi:shop-plus",
-      text: "All Products",
-    },{
-      link: "/addproduct",
-      section: "addproduct",
-      icon: "material-symbols:add-box",
-      text: "Add Product",
-    },{
-      link: "/discount",
-      section: "discount",
-      icon: "mdi:discount-box",
-      text: "Create discount code",
-    },]
+    section: "products",
+    icon: "mdi:shop-plus",
+    text: "All Products",
   },
+  {
+    link: "/addproduct",
+    section: "addproduct",
+    icon: "material-symbols:add-box",
+    text: "Add Product",
+  },
+  {
+    link: "/discount",
+    section: "discount",
+    icon: "mdi:discount-box",
+    text: "Create discount code",
+  },
+
   {
     link: "/comments",
     section: "Comments",

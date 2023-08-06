@@ -83,7 +83,7 @@ const Sidebar = () => {
             src={fav}
           />
         ) : (
-          lang=="fa" ? <img src={logoE} /> :  lang=="en" && width <= 768 ? <img style={{marginLeft:"-200px"}} src={logoE}/> : <img src={logoE} />
+          lang=="fa" ? <img src={logoE} style={{paddingLeft:"14px"}} /> :  lang=="en" && width <= 768 ? <img style={{marginLeft:"-200px"}} src={logoE}/> : <img src={logoE} />
 
           // <img src={logoE} />
         )}
@@ -109,56 +109,6 @@ const Sidebar = () => {
                 {t(nav.section)}
               </div>
             </NavLink>
-            {nav.children && sidebarCtx.isOpen && (
-              <Icon
-                className={lang === "fa" ? classes.iconfa : classes.iconen}
-                onClick={clickHandler}
-                icon="material-symbols:arrow-drop-down-rounded"
-                width="36"
-                height="36"
-                rotate={showHandler ? 2 : 0}
-              />
-            )}
-            {nav.children && width <= 768 && (
-              <Icon
-                onClick={clickHandler}
-                className={
-                  lang === "fa"
-                    ? classes.icon__mobilefa
-                    : classes.icon__mobileen
-                }
-                icon="material-symbols:arrow-drop-down-rounded"
-                width="36"
-                height="36"
-              />
-            )}
-            {nav.children?.map((n, index) => {
-              return (
-                <NavLink
-                  to={n.link}
-                  key={`n-${index}`}
-                  className={(navClass) =>
-                    navClass.isActive
-                      ? `${classes.sidebar__menu__item} ${classes.active} `
-                      : `${classes.sidebar__menu__item}`
-                  }
-                  style={{
-                    marginRight: "8px",
-                    marginLeft: "15px",
-                    maxHeight: `${accordionHeight}`,
-                    marginBottom: `${marginBottom}`,
-                  }}
-                  onClick={openSidebarHandler}
-                >
-                  <div className={classes.sidebar__menu__item__icon}>
-                    <Icon icon={n.icon} />
-                  </div>
-                  <div className={classes.sidebar__menu__item__txt}>
-                    {t(n.section)}
-                  </div>
-                </NavLink>
-              );
-            })}
           </>
         ))}
       </div>
@@ -168,6 +118,7 @@ const Sidebar = () => {
           to="/"
           className={classes.sidebar__menu__item}
           onClick={logoutHandler}
+          style={{marginBottom:"150px"}}
         >
           <div className={classes.sidebar__menu__item__icon}>
             <Icon icon="tabler:logout" />
