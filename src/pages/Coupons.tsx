@@ -9,33 +9,52 @@ import SearchContext from "../context/searchTerm";
 import searchTerm from "../helper/searchTerm";
 import { useAppSelector } from "../redux/hooks";
 
-
 function Coupons() {
   const { t } = useTranslation();
-  useTitle(t("discount"))
+  useTitle(t("discount"));
 
-  const { search } = useContext(SearchContext)
+  const { search } = useContext(SearchContext);
   const [filtered, setFiltered] = useState<any>([]);
 
   const discount = useAppSelector((state) => state.discounts.discount);
 
-
   useEffect(() => {
-    setFiltered(searchTerm(discount, search))
-  }, [search,discount])
+    setFiltered(searchTerm(discount, search));
+  }, [search, discount]);
 
-  let couponsTable = <CustomTable
-    headData={data.coupons.head}
-    bodyData={filtered}
-    limit={10}
-    key={filtered}
-  />
+  let couponsTable = (
+    <CustomTable
+      headData={data.coupons.head}
+      bodyData={filtered}
+      limit={10}
+      key={filtered}
+    />
+  );
 
   return (
     <section>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h2 className="title">{t("discount")}</h2>
-        <Link to="/discount/createCoupons" style={{ width: "300px", border: "none", backgroundColor: "transparent", margin: "0 -35px 25px -35px" }}><Button>{t("createCoupon")}</Button>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          whiteSpace: "nowrap"
+        }}
+      >
+        <h2 style={{ whiteSpace: "nowrap" }} className="title">
+          {t("discount")}
+        </h2>
+        <Link
+          to="/discount/createCoupons"
+          style={{
+            width: "220px",
+            whiteSpace: "nowrap",
+            border: "none",
+            backgroundColor: "transparent",
+            margin: "0 0px 25px 0px",
+          }}
+        >
+          <Button>{t("createCoupon")}</Button>
         </Link>
       </div>
       {couponsTable}
