@@ -1,46 +1,72 @@
-# Getting Started with Create React App
+<h1 align="center" id="title">Admin Dashboard Panel</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center"><br />
+<img width="150" src="https://www.uplooder.net/img/image/55/cda078f8bb7f8ef6934b20821eac3d54/fav.png" alt="project-image"></p>
+<br />
 
-## Available Scripts
+<p id="description">The difficulty of the admin panel made with React and TypeScript technologies! Also project styles are written by Sass CSS! Amcharts has also been used to display charts and redux toolkit as a state managment</p>
+<br />
 
-In the project directory, you can run:
+<h2>🚀 Demo</h2>
 
-### `npm start`
+[https://resonant-biscochitos-f6503f.netlify.app/](https://resonant-biscochitos-f6503f.netlify.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h2>Project Screenshots:</h2>
+<br />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src="https://www.uplooder.net/img/image/76/dbff494178ed33555999b6bd4dec9a19/Screenshot-2023-12-26-111828.png" alt="project-screenshot"  align="center" width="450" height="600/">
 
-### `npm test`
+<img src="https://www.uplooder.net/img/image/30/413cfc2db4b6bec55c6e6e298c945930/Screenshot-2023-12-26-111918.png" alt="project-screenshot" align="center" width="400" height="600/">
+<br />
+<br />
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://www.uplooder.net/img/image/54/b3bd53a3fcdf943e90a38b79d0fa4532/Screenshot-2023-12-26-112253.png" alt="project-screenshot" width="auto" height="400/">
+<br />
+<br />
 
-### `npm run build`
+  
+  
+<h2>🧐 Features</h2>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Here're some of the project's best features:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*   Beautifully responsive on mobile and desktop
+*   Add discount code
+*   Creating and editing products
+*   Management of comments with the ability to approve or disapprove
+*   Show calendar
+*   Use charts
+*   Dark mode feature
+*   Using English and Farsi with the ability to switch between them
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h2>🛠️ Installation Steps:</h2>
 
-### `npm run eject`
+<p>1. git clone</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+https://github.com/AmirhosseinMirsalari/admin-panel-ts
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p>2. npm install</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p>3. npm start</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  
+  <br />
 
-## Learn More
+<h2>💻 Built with</h2>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Technologies used in the project:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+*   React
+*   Webpack
+*   scss
+*   amcharts5
+*   reduxjs/toolkit
+*   i18next
+*   multiselect-react-dropdown
+*   nprogress
+*   react-multi-date-picker
+*   typescript
