@@ -14,14 +14,10 @@
 <h2>Project Screenshots:</h2>
 <br />
 <img src="https://www.uplooder.net/img/image/54/b3bd53a3fcdf943e90a38b79d0fa4532/Screenshot-2023-12-26-112253.png" alt="project-screenshot" width="auto" height="400/">
-
-
-<img src="https://www.uplooder.net/img/image/30/413cfc2db4b6bec55c6e6e298c945930/Screenshot-2023-12-26-111918.png" alt="project-screenshot" align="center" width="350" height="400/">
-<br />
 <br />
 <br />
 
-<img src="https://www.uplooder.net/img/image/76/dbff494178ed33555999b6bd4dec9a19/Screenshot-2023-12-26-111828.png" alt="project-screenshot"  align="center" width="400" height="400/">
+<img src="https://www.uplooder.net/img/image/76/dbff494178ed33555999b6bd4dec9a19/Screenshot-2023-12-26-111828.png" alt="project-screenshot"  align="center" width="450" height="550/">
 <br />
 <br />
 
