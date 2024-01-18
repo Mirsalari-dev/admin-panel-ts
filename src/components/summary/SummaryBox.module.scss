@@ -13,19 +13,22 @@
   &__icon {
     margin: 0 1rem;
   }
+  &__info {
+    text-align: center;
+  }
   &__info__amount {
     display: flex;
     margin-top: 0.3rem;
     flex-wrap: wrap;
     & h4 {
       margin-top: 1rem;
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 400;
       white-space: nowrap;
     }
     & sup {
       font-size: $fontSizeBodyLarge;
-      margin:12px 5px
+      margin: 12px 5px;
     }
   }
 }

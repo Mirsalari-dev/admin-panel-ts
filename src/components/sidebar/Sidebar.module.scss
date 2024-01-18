@@ -40,18 +40,16 @@
     img {
       width: 150px;
       height: 25px;
-      
     }
 
     @include tablet {
       padding-top: 1rem;
-      margin-left: 60%
-
+      margin-left: 60%;
     }
 
     @include mobile {
       padding-top: 0.5rem;
-      margin-left: 60%
+      margin-left: 60%;
     }
   }
 
@@ -68,6 +66,9 @@
       width: 100%;
       overflow: hidden;
       transition: all 0.3s ease-in-out;
+      @include mobile {
+        font-size: 14px !important;
+      }
 
       &:hover {
         color: var(--primaryColor);
@@ -153,7 +154,6 @@ html[dir="rtl"] {
       }
       @include mobile {
         margin-right: 20px;
-
       }
     }
   }

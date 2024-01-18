@@ -1,15 +1,11 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import classes from "./Sidebar.module.scss";
 import { Icon } from "@iconify/react";
-import { useLocalStorage, useWindowSize } from "usehooks-ts";
+import { useContext, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { useWindowSize } from "usehooks-ts";
 import sidebarNav from "../../config/sidebarNav";
 import SidebarContext from "../../context/sidebarContext";
-import logoE from "../../assets/images/logoE.png";
-import fav from "../../assets/images/fav.png";
-import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
-import LangContext from "../../context/langContext";
+import classes from "./Sidebar.module.scss";
 
 const Sidebar = () => {
   const [showHandler, setShowHandler] = useState(false);
@@ -19,10 +15,8 @@ const Sidebar = () => {
 
   const { width } = useWindowSize();
   const sidebarCtx = useContext(SidebarContext);
-  const { lang } = useContext(LangContext);
   const { t } = useTranslation();
   const contentRef = useRef<any>(null);
-  const router = useNavigate()
 
   function openSidebarHandler() {
     //for width>768(tablet size) if sidebar was open in width<768 was opened too.
@@ -33,16 +27,6 @@ const Sidebar = () => {
   function logoutHandler() {
     openSidebarHandler();
   }
-
-  const clickHandler = () => {
-    setShowHandler((showHandler) => !showHandler);
-    setAccordionHeight(
-      showHandler ? "0px" : `${contentRef.current.scrollHeight}px`
-    );
-    setMarginBottom(
-      showHandler ? "0px" : `${contentRef.current.scrollHeight}px`
-    );
-  };
 
   useEffect(() => {
     if (!sidebarCtx.isOpen) {
@@ -76,18 +60,7 @@ const Sidebar = () => {
         !sidebarCtx.isOpen && classes.sidebar_close
       }`}
     >
-      <div onClick={()=>router("/")} className={classes.sidebar__logo}>
-        {!sidebarCtx.isOpen && width > 768 ? (
-          <img
-            style={{ width: "33px", height: "22px", marginLeft: "12px" }}
-            src={fav}
-          />
-        ) : (
-          lang=="fa" ? <img src={logoE} style={{paddingLeft:"14px"}} /> :  lang=="en" && width <= 768 ? <img style={{marginLeft:"-200px"}} src={logoE}/> : <img src={logoE} />
-
-          // <img src={logoE} />
-        )}
-      </div>
+      <div className={classes.sidebar__logo}></div>
       <div className={classes.sidebar__menu}>
         {sidebarNav.map((nav, index) => (
           <>
@@ -118,7 +91,7 @@ const Sidebar = () => {
           to="/"
           className={classes.sidebar__menu__item}
           onClick={logoutHandler}
-          style={{marginBottom:"150px"}}
+          style={{ marginBottom: "150px" }}
         >
           <div className={classes.sidebar__menu__item__icon}>
             <Icon icon="tabler:logout" />
