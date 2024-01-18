@@ -17,7 +17,7 @@
 <br />
 <br />
 
-<img src="https://www.uplooder.net/img/image/76/dbff494178ed33555999b6bd4dec9a19/Screenshot-2023-12-26-111828.png" alt="project-screenshot"  align="center" width="450" height="550/">
+<img src="https://www.uplooder.net/img/image/76/dbff494178ed33555999b6bd4dec9a19/Screenshot-2023-12-26-111828.png" alt="project-screenshot"  align="center" width="auto" height="400/">
 <br />
 <br />
 
