@@ -17,10 +17,6 @@
 <br />
 <br />
 
-<img src="https://www.uplooder.net/img/image/76/dbff494178ed33555999b6bd4dec9a19/Screenshot-2023-12-26-111828.png" alt="project-screenshot" >
-<br />
-<br />
-
   
   
 <h2>🧐 Features</h2>
