@@ -9,7 +9,7 @@
 
 <h2>🚀 Demo</h2>
 
-[https://resonant-biscochitos-f6503f.netlify.app/](https://resonant-biscochitos-f6503f.netlify.app/)
+[https://teal-kulfi-b0216c.netlify.app/](https://teal-kulfi-b0216c.netlify.app/)
 
 <h2>Project Screenshots:</h2>
 <br />
