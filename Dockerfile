@@ -15,5 +15,6 @@ COPY . .
 # Expose the port that the application listens on.
 EXPOSE 3000
 
+RUN npm run build
 # Run the application.
 CMD npm start
