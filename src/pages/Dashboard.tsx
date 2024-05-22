@@ -13,6 +13,7 @@ function Dashboard() {
   return (
     <section>
       <h2 className="title">{t("dashboard")}</h2>
+      <p>asdadasdadasd</p>
       <Summary />
       <Chart />
       <Table />
