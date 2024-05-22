@@ -19,11 +19,14 @@ jobs:
     - name: Build Docker image
       run: docker build -t my-app .
 
+    - name: Tag Docker image
+      run: docker tag my-app ${{ secrets.DOCKER_HUB_USERNAME }}/my-app:latest
+
     - name: Log in to Docker Hub
       run: echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
 
     - name: Push Docker image
-      run: docker push my-app
+      run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/my-app:latest
 
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v1.2.2
