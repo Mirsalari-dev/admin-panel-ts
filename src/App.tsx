@@ -2,23 +2,23 @@ import React, { Suspense, useEffect } from 'react';
 import "./scss/App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
-import NotFound from './pages/NotFound';
+import NotFound from './pages/notFound';
 import NProgress from 'nprogress';
 
 
 
-const Dashboard = React.lazy(() => import("./pages/Dashboard"));
-const Customers = React.lazy(() => import("./pages/Customers"));
-const CustomerEdit = React.lazy(() => import("./pages/CustomerEdit"));
-const Products = React.lazy(() => import("./pages/Products"));
-const ProductEdit = React.lazy(() => import("./pages/ProductEdit"));
-const Transactions = React.lazy(() => import("./pages/Transactions"));
-const Coupons = React.lazy(() => import("./pages/Coupons"));
-const CouponsEdit = React.lazy(() => import("./pages/CouponsEdit"));
-const CreateCoupons = React.lazy(() => import("./pages/CreateCoupons"));
-const Comments = React.lazy(() => import("./pages/Comments"));
-const CommentsEdit = React.lazy(() => import("./pages/CommentsEdit"));
-const AddProduct = React.lazy(() => import("./pages/AddProduct"));
+const Dashboard = React.lazy(() => import("./pages/dashboard"));
+const Customers = React.lazy(() => import("./pages/customers"));
+const CustomerEdit = React.lazy(() => import("./pages/customerEdit"));
+const Products = React.lazy(() => import("./pages/products"));
+const ProductEdit = React.lazy(() => import("./pages/productEdit"));
+const Transactions = React.lazy(() => import("./pages/transactions"));
+const Coupons = React.lazy(() => import("./pages/coupons"));
+const CouponsEdit = React.lazy(() => import("./pages/couponsEdit"));
+const CreateCoupons = React.lazy(() => import("./pages/createCoupons"));
+const Comments = React.lazy(() => import("./pages/comments"));
+const CommentsEdit = React.lazy(() => import("./pages/commentsEdit"));
+const AddProduct = React.lazy(() => import("./pages/addProduct"));
 
 
 
