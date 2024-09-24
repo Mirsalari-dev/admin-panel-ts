@@ -19,5 +19,4 @@ EXPOSE 3000
 # Build the application.
 RUN npm run build
 
-# Run the application.
 CMD ["npm", "start"]
