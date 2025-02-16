@@ -12,9 +12,7 @@
 [https://teal-kulfi-b0216c.netlify.app/](https://teal-kulfi-b0216c.netlify.app/)
 
 <h2>Project Screenshots:</h2>
-<br />
-<img src="https://www.uplooder.net/img/image/54/b3bd53a3fcdf943e90a38b79d0fa4532/Screenshot-2023-12-26-112253.png" alt="project-screenshot" width="auto" height="400/">
-<br />
+
 <br />
 
   
@@ -38,7 +36,7 @@ Here're some of the project's best features:
 <p>1. git clone</p>
 
 ```
-https://github.com/AmirhosseinMirsalari/admin-panel-ts
+https://github.com/Mirsalari-dev/admin-panel-ts
 ```
 
 <p>2. npm install</p>
